@@ -18,17 +18,21 @@ import data from "./Sections/Data/designBlocksData";
 import BuiltByDevelopers from "./Components/BuiltByDevelopers.vue";
 import PresentationTestimonials from "./Sections/PresentationTestimonials.vue";
 import PresentationInformation from "./Sections/PresentationInformation.vue";
-NavbarDefault
+import DusakabinPresentation from "./Sections/DusakabinPresentation.vue";
+import CamPresentation from "./Sections/CamPresentation.vue";
+import AynaPresentation from "./Sections/AynaPresentation.vue";
+import DogramaPresentation from "./Sections/DogramaPresentation.vue";
+
 //images
-// import vueMkHeader from "@/assets/img/vue-mk-header.jpg";
-import vueMkHeader from "@/assets/img/header-shower-cabins.jpg";
-import wavesWhite from "@/assets/img/waves-white.svg";
+import headerDusakabin from "@/assets/images/headerdusakabin.jpg";
 import logoBootstrap from "@/assets/img/logos/bootstrap5.jpg";
 import logoTailwind from "@/assets/img/logos/icon-tailwind.jpg";
 import logoVue from "@/assets/img/logos/vue.jpg";
 import logoAngular from "@/assets/img/logos/angular.jpg";
 import logoReact from "@/assets/img/logos/react.jpg";
 import logoSketch from "@/assets/img/logos/sketch.jpg";
+import logo  from "@/assets/images/logos/just-logo-original.png"
+import glassBackground from "@/assets/images/glass-background.jpg";
 
 //hooks
 const body = document.getElementsByTagName("body")[0];
@@ -46,26 +50,33 @@ onUnmounted(() => {
   <div class="container position-sticky z-index-sticky top-0">
     <div class="row">
       <div class="col-12">
-        <NavbarDefault :sticky="true" />
+        <NavbarDefault sticky="true"  />
       </div>
     </div>
   </div>
   <Header>
     <div
       class="page-header min-vh-75"
-      :style="`background-image: url(${vueMkHeader})`"
+      :style="`background-image: url(${headerDusakabin})`"
       loading="lazy"
     >
       <div class="container">
         <div class="row">
+          <div class="col col-lg-2 mx-auto">
+            <img 
+        :src="logo"
+        :style="{height: '8rem',width:'12rem'}" />
+          </div>
+        </div>
+        <div class="row mt-5">
           <div class="col-lg-7 text-center mx-auto position-relative">
             <h1
-              class="text-white pt-3 mt-n5 me-2"
+              class="text-white ms-2"
               :style="{ display: 'inline-block ' }"
             >
               Mages Cam
             </h1>
-            <p class="lead text-white px-5 mt-3" :style="{ fontWeight: '500' }">
+            <p class="lead text-white ms-2" :style="{ fontWeight: '500' }">
               Cama dair herşey.
             </p>
           </div>
@@ -76,60 +87,11 @@ onUnmounted(() => {
 
   <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
     <PresentationCounter />
-    <PresentationInformation />
-    <PresentationInformation />
-    <PresentationExample :data="data" />
-    <PresentationPages />
-    <BuiltByDevelopers />
+    <DusakabinPresentation id="dusakabin"/>
+    <CamPresentation id="cam" />
+    <AynaPresentation id="ayna" />
+    <DogramaPresentation id="dograma-cesitleri" />
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <FilledInfoCard
-            class="p-4"
-            :color="{ text: 'white', background: 'bg-gradient-success' }"
-            :icon="{ component: 'flag', color: 'white' }"
-            title="Getting Started"
-            description="Check the possible ways of working with our product and the necessary files for building your own project."
-            :action="{
-              route:
-                'https://www.creative-tim.com/learning-lab/vue/overview/material-kit/',
-              label: { text: 'Let\'s start', color: 'white' }
-            }"
-          />
-        </div>
-        <div class="col-lg-4">
-          <FilledInfoCard
-            class="px-lg-1 mt-lg-0 mt-4 p-4"
-            height="h-100"
-            :icon="{ component: 'precision_manufacturing', color: 'success' }"
-            title="Plugins"
-            description="Get inspiration and have an overview about the plugins that we
-                used to create the Material Kit."
-            :action="{
-              route:
-                'https://www.creative-tim.com/learning-lab/vue/input/material-kit/',
-              label: { text: 'Read more' }
-            }"
-          />
-        </div>
-        <div class="col-lg-4">
-          <FilledInfoCard
-            class="px-lg-1 mt-lg-0 mt-4 p-4"
-            :icon="{ component: 'receipt_long', color: 'success' }"
-            title="Utility Classes"
-            description="Material Kit is giving you a lot of pre-made elements. For those
-                who want flexibility, we included many utility classes."
-            :action="{
-              route:
-                'https://www.creative-tim.com/learning-lab/vue/utilities/material-kit/',
-              label: { text: 'Read more' }
-            }"
-          />
-        </div>
-      </div>
-    </div>
-    <PresentationTestimonials />
 
     <div
       class="container-fluid mt-sm-5 border-radius-xl"
@@ -140,7 +102,7 @@ onUnmounted(() => {
       <div
         class="page-header py-6 py-md-5 my-sm-3 mb-3 border-radius-xl"
         :style="{
-          backgroundImage: `url(${wavesWhite})`
+          backgroundImage: `url(${glassBackground})`
         }"
         loading="lazy"
       >
@@ -148,21 +110,18 @@ onUnmounted(() => {
         <div class="container">
           <div class="row">
             <div class="d-flex justify-content-center p-5">
-              <div class="col-lg-8 ms-lg-5 text-center">
+              <div class="col-lg-8 text-center">
                 <h3 class="text-white">
-                  Do you love this awesome UI Kit from Vuejs & Bootstrap?
+                  Bizi daha yakından tanımak ister misiniz?
                 </h3>
                 <p class="text-white text-md">
-                  Cause if you do, it can be yours for FREE. Hit the button
-                  below to navigate to Creative Tim where you can <br />
-                  find the Design System in HTML. Start a new project or give an
-                  old Bootstrap project a new look!
+                  İstanbul Sultanbeyli'deki merkezimizden, cam işleme ve ayna tasarımı alanında yüksek kaliteli ve özelleştirilmiş çözümler sunuyoruz. Sultanbeyli ve çevresindeki müşterilerimize yönelik geniş hizmet yelpazemiz, duşakabinlerden dekoratif aynalara, özel tasarım camlardan güvenlik ve izolasyon sağlayan ürünlere kadar uzanmaktadır. İstanbul’un bu canlı semtinde, müşteri memnuniyetini ön planda tutarak, projelerinize değer katmayı ve beklentilerinizi aşmayı hedefliyoruz. Sultanbeyli merkezli olarak, bölgesel ihtiyaçlarınıza en uygun çözümleri sunmak için yerel pazarın dinamiklerine hakim bir yaklaşım sergiliyoruz. Projelerinizde size nasıl yardımcı olabileceğimizi keşfetmek ve Sultanbeyli'de cam ve ayna çözümleri konusunda lider seçeneğiniz olmak için bizimle iletişime geçin.
                 </p>
 
                 <a
                   href="https://www.creative-tim.com/product/vue-material-kit"
                   class="btn btn-sm mb-0 bg-gradient-success px-5 py-3 mt-4"
-                  >Download Now</a
+                  >Hakkımızda</a
                 >
               </div>
             </div>
@@ -170,124 +129,37 @@ onUnmounted(() => {
         </div>
       </div>
     </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="d-flex flex-column w-100 text-center p-5 mb-8">
-          <h3>Available on these technologies</h3>
-          <div class="d-flex justify-content-center mt-3 flex-wrap">
-            <a
-              href="https://www.creative-tim.com/product/material-kit"
-              data-bs-toggle="tooltip"
-              data-bs-placement="bottom"
-              title="Bootstrap 5 - Most popular front-end component library"
-            >
-              <img
-                :src="logoBootstrap"
-                alt="title"
-                loading="lazy"
-                :style="{ height: '90px' }"
-              />
-            </a>
-            <a
-              class="opacity-5 ms-3"
-              href="#"
-              data-bs-toggle="tooltip"
-              data-bs-placement="bottom"
-              title="Coming Soon"
-            >
-              <img
-                :src="logoTailwind"
-                alt="title"
-                loading="lazy"
-                :style="{ height: '90px' }"
-              />
-            </a>
-            <a
-              href="https://www.creative-tim.com/product/vue-material-kit-pro"
-              class="mx-3"
-              data-bs-toggle="tooltip"
-              data-bs-placement="bottom"
-              title="Vue.js - Is a Progressive JavaScript Framework"
-            >
-              <img
-                :src="logoVue"
-                alt="title"
-                loading="lazy"
-                :style="{ height: '90px' }"
-              />
-            </a>
-            <a
-              class="opacity-5"
-              href="#"
-              data-bs-toggle="tooltip"
-              data-bs-placement="bottom"
-              title="Coming Soon"
-            >
-              <img
-                :src="logoAngular"
-                alt="title"
-                loading="lazy"
-                :style="{ height: '90px' }"
-              />
-            </a>
-            <a
-              href="https://www.creative-tim.com/product/material-kit-react-pro"
-              class="mx-3"
-              data-bs-toggle="tooltip"
-              data-bs-placement="bottom"
-              title="React – A JavaScript library for building user interfaces"
-            >
-              <img
-                :src="logoReact"
-                alt="title"
-                loading="lazy"
-                :style="{ height: '90px' }"
-              />
-            </a>
-            <a
-              class="opacity-5"
-              href="#"
-              data-bs-toggle="tooltip"
-              data-bs-placement="bottom"
-              title="Coming Soon"
-            >
-              <img
-                :src="logoSketch"
-                alt="title"
-                loading="lazy"
-                :style="{ height: '90px' }"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="py-5">
       <div class="container">
         <div class="row">
-          <div class="col-lg-5 ms-auto">
-            <h4 class="mb-1">Thank you for your support!</h4>
-            <p class="lead mb-0">We deliver the best web products</p>
+          <div class="col col-lg-5 mx-auto text-center">
+            <h4 class="mb-3">Bizleri sosyal medya kanallarımızdan takip edin!</h4>
           </div>
-          <div class="col-lg-5 me-lg-auto my-lg-auto text-lg-end mt-5">
+          <div class="w-100"></div>
+          <div class="col col-lg-6 mx-auto text-center">
             <MaterialSocialButton
-              route="https://twitter.com/intent/tweet?text=Check%20Material%20Design%20System%20made%20by%20%40CreativeTim%20%23webdesign%20%23designsystem%20%23bootstrap5&url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fmaterial-design-system-pro"
-              component="twitter"
-              color="twitter"
-              label="Tweet"
+              route="https://youtube.com/@mehmetaksu4100?feature=shared"
+              component="youtube"
+              color="youtube"
+              label="Youtube"
             />
             <MaterialSocialButton
-              route="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/material-design-system-pro"
+              route="https://www.facebook.com/share/Gt7QZApxB9VdUrcP/?mibextid=qi2Omg"
               component="facebook-square"
               color="facebook"
-              label="Share"
+              label="Facebook"
             />
             <MaterialSocialButton
-              route=""
-              component="pinterest"
-              color="pinterest"
-              label="Pin it"
+              route="https://www.instagram.com/mages__cam?igsh=MWhlMjg1a3lwd2Rheg=="
+              component="instagram"
+              color="dribbble"
+              label="Instagram"
+            />
+            <MaterialSocialButton
+              route="https://www.tiktok.com/@vatan_doga?_t=8kx6hr4LDfi&_r=1"
+              component="instagram"
+              color="vimeo"
+              label="TikTok"
             />
           </div>
         </div>

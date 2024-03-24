@@ -3,6 +3,7 @@ import { computed  } from "vue";
 import DefaultCounterCard from "../../../examples/cards/counterCards/DefaultCounterCard.vue";
 
 let sinceYear = 1986;
+
 let since = computed(() =>{
   let nowYear = new Date().getFullYear();
   return nowYear - sinceYear;
@@ -19,7 +20,7 @@ let messageForExperience = sinceYear + "'dan beri cam işlemesi üzerine engin t
           <div class="row">
             <div class="col-md-4 position-relative">
               <DefaultCounterCard
-                color="success"
+                color="info"
                 title="Senelik Tecrübe"
                 :description="messageForExperience"
                 :count="since"
@@ -30,7 +31,7 @@ let messageForExperience = sinceYear + "'dan beri cam işlemesi üzerine engin t
             </div>
             <div class="col-md-4 position-relative">
               <DefaultCounterCard
-                color="success"
+                color="info"
                 title="Alanda Hizmet"
                 description="Duşakabin, ayna, sineklik vb. her alanda kaliteli ve güvenilir hizmetler sunuyoruz."
                 :count="15"
@@ -41,7 +42,7 @@ let messageForExperience = sinceYear + "'dan beri cam işlemesi üzerine engin t
             </div>
             <div class="col-md-4">
               <DefaultCounterCard
-                color="success"
+                color="info"
                 title="Referans"
                 description="Müşteri memnuniyeti ve kalite odaklı yaklaşımımız, sektördeki güçlü referanslarımızın temelini oluşturmaktadır."
                 :count="10"
