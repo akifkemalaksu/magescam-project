@@ -15,12 +15,14 @@ import YarimDaireDusakabin from "@/assets/images/yarimdairedusakabin.jpg";
           <RotatingCard>
             <RotatingCardFront
               :image="KoseDusakabin"
+              size="contain"
               title="Köşe Duşakabin"
               description="Küçük banyolar için ideal olan köşe duşakabinler, alanı verimli kullanmanıza olanak tanır."
             />
 
             <RotatingCardBack
               :image="YarimDaireDusakabin"
+              size="contain"
               title="Yarım Daire Duşakabin"
               description="Yarım daire veya kavisli ön yüze sahip olan bu modeller, modern bir görünüm sunar ve banyonuza şık bir dokunuş ekler."
               :action="[

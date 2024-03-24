@@ -21,6 +21,7 @@ import ZeminAyna from "@/assets/images/zeminayna.jpg";
 
             <RotatingCardBack
               :image="ZeminAyna"
+              size="contain"
               title="Zemin Aynası"
               description="Zemin aynaları, geniş yansıma alanı sunarak odanızı daha geniş ve davetkar hale getirir. Ayakta durabilen tasarımları ile kolay yerleştirme imkanı sunar."
               :action="[

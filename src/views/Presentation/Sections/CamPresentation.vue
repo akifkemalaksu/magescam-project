@@ -15,12 +15,14 @@ import VitrinCam from "@/assets/images/vitrincam.jpg";
           <RotatingCard>
             <RotatingCardFront
               :image="MasaCam"
+              size="cover"
               title="Masa Camı"
               description="Dayanıklılığı ve şıklığı bir arada sunan masa camları, her türlü mekâna modern bir dokunuş ekler ve kullanım alanınızı aydınlatır."
             />
 
             <RotatingCardBack
               :image="VitrinCam"
+              size="contain"
               title="Vitrin Camı"
               description="Ürünlerinizi sergilemek için ideal olan vitrin camları, maksimum görünürlük sağlar ve mekânınıza estetik bir hava katar."
               :action="[

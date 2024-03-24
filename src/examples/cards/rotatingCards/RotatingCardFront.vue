@@ -4,6 +4,11 @@ defineProps({
     type: String,
     required: true,
   },
+  size:{
+    type:String,
+    required:false,
+    default: 'cover'
+  },
   icon: {
     type: String,
     default: "",
@@ -27,7 +32,7 @@ defineProps({
     class="front front-background"
     :style="{
       backgroundImage: `url(${image})`,
-      backgroundSize: 'cover',
+      backgroundSize: size,
     }"
   >
     <div class="card-body py-7 text-center">

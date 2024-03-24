@@ -4,6 +4,11 @@ defineProps({
     type: String,
     required: true,
   },
+  size:{
+    type:String,
+    required:false,
+    default: 'cover'
+  },
   title: {
     type: String,
     required: true,
@@ -26,7 +31,7 @@ defineProps({
     class="back back-background"
     :style="{
       backgroundImage: `url(${image})`,
-      backgroundSize: 'cover',
+      backgroundSize: size,
     }"
   >
     <div class="card-body pt-7 text-center">
