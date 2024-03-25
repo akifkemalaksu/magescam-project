@@ -146,6 +146,13 @@ const router = createRouter({
       name: "el-typography",
       component: ElTypography,
     },
+    {
+      name: "address",
+      path: "/adres-tarifi",
+      beforeEnter: (to, from, next) => {
+        window.location.href="https://www.google.com/maps/place/40%C2%B057'39.0%22N+29%C2%B016'04.0%22E/@40.960827,29.2652011,17z/data=!3m1!4b1!4m4!3m3!8m2!3d40.960823!4d29.267776?entry=ttu"
+      }
+    },
   ],
 });
 

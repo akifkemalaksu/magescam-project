@@ -1,5 +1,6 @@
 <script setup>
 import logoDark from "@/assets/img/logo-ct-dark.png";
+import Gmap from "@/components/Map.vue";
 defineProps({
   brand: {
     type: Object,
@@ -177,6 +178,9 @@ defineProps({
               >.
             </p>
           </div>
+        </div>
+        <div class="col-12">
+            <Gmap></Gmap>
         </div>
       </div>
     </div>
