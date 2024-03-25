@@ -25,6 +25,7 @@ COPY --from=build-stage /app/dist /usr/share/nginx/html
 
 # Expose port 80 to the outside once the container has launched
 EXPOSE 80
+EXPOSE 443
 
 # When the container starts, start Nginx server
 CMD ["nginx", "-g", "daemon off;"]
