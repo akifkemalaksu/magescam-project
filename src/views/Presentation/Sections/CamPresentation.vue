@@ -1,8 +1,8 @@
 <script setup>
-import RotatingCard from "../../../examples/cards/rotatingCards/RotatingCard.vue";
-import RotatingCardFront from "../../../examples/cards/rotatingCards/RotatingCardFront.vue";
-import RotatingCardBack from "../../../examples/cards/rotatingCards/RotatingCardBack.vue";
-import DefaultInfoCard from "../../../examples/cards/infoCards/DefaultInfoCard.vue";
+import RotatingCard from "../../../components/cards/rotatingCards/RotatingCard.vue";
+import RotatingCardFront from "../../../components/cards/rotatingCards/RotatingCardFront.vue";
+import RotatingCardBack from "../../../components/cards/rotatingCards/RotatingCardBack.vue";
+import DefaultInfoCard from "../../../components/cards/infoCards/DefaultInfoCard.vue";
 
 import MasaCam from "@/assets/images/masacam.jpg";
 import VitrinCam from "@/assets/images/vitrincam.jpg";
@@ -25,12 +25,6 @@ import VitrinCam from "@/assets/images/vitrincam.jpg";
               size="contain"
               title="Vitrin Camı"
               description="Ürünlerinizi sergilemek için ideal olan vitrin camları, maksimum görünürlük sağlar ve mekânınıza estetik bir hava katar."
-              :action="[
-                {
-                  route: './/sections/page-sections/hero-sections.html',
-                  label: 'Daha fazla detay için',
-                },
-              ]"
             />
           </RotatingCard>
         </div>

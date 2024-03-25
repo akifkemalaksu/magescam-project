@@ -2,37 +2,24 @@
 import { onMounted, onUnmounted } from "vue";
 
 //example components
-import NavbarDefault from "../..//examples/navbars/NavbarDefault.vue";
-import DefaultFooter from "../../examples/footers/FooterDefault.vue";
-import Header from "../../examples/Header.vue";
-import FilledInfoCard from "../../examples/cards/infoCards/FilledInfoCard.vue";
+import NavbarDefault from "../../components/navbars/NavbarDefault.vue";
+import DefaultFooter from "../../components/footers/FooterDefault.vue";
 
 //Vue Material Kit 2 components
 import MaterialSocialButton from "@/components/MaterialSocialButton.vue";
 
 // sections
 import PresentationCounter from "./Sections/PresentationCounter.vue";
-import PresentationPages from "./Sections/PresentationPages.vue";
-import PresentationExample from "./Sections/PresentationExample.vue";
-import data from "./Sections/Data/designBlocksData";
-import BuiltByDevelopers from "./Components/BuiltByDevelopers.vue";
-import PresentationTestimonials from "./Sections/PresentationTestimonials.vue";
-import PresentationInformation from "./Sections/PresentationInformation.vue";
 import DusakabinPresentation from "./Sections/DusakabinPresentation.vue";
 import CamPresentation from "./Sections/CamPresentation.vue";
 import AynaPresentation from "./Sections/AynaPresentation.vue";
 import DogramaPresentation from "./Sections/DogramaPresentation.vue";
 
 //images
-import headerDusakabin from "@/assets/images/headerdusakabin.jpg";
-import logoBootstrap from "@/assets/img/logos/bootstrap5.jpg";
-import logoTailwind from "@/assets/img/logos/icon-tailwind.jpg";
-import logoVue from "@/assets/img/logos/vue.jpg";
-import logoAngular from "@/assets/img/logos/angular.jpg";
-import logoReact from "@/assets/img/logos/react.jpg";
-import logoSketch from "@/assets/img/logos/sketch.jpg";
+import background from "@/assets/images/header-background-presentation.jpg";
 import logo  from "@/assets/images/logos/just-logo-original.png"
 import glassBackground from "@/assets/images/glass-background.jpg";
+import { RouterLink } from "vue-router";
 
 //hooks
 const body = document.getElementsByTagName("body")[0];
@@ -54,10 +41,10 @@ onUnmounted(() => {
       </div>
     </div>
   </div>
-  <Header>
-    <div
+  <div
+    id="header"
       class="page-header min-vh-75"
-      :style="`background-image: url(${headerDusakabin})`"
+      :style="`background-image: url(${background})`"
       loading="lazy"
     >
       <div class="container">
@@ -65,7 +52,9 @@ onUnmounted(() => {
           <div class="col col-lg-2 mx-auto">
             <img 
         :src="logo"
-        :style="{height: '8rem',width:'12rem'}" />
+        :style="{height: '8rem',width:'12rem'}"
+        alt="Mages Cam logo"
+         />
           </div>
         </div>
         <div class="row mt-5">
@@ -83,7 +72,6 @@ onUnmounted(() => {
         </div>
       </div>
     </div>
-  </Header>
 
   <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
     <PresentationCounter />
@@ -117,12 +105,10 @@ onUnmounted(() => {
                 <p class="text-white text-md">
                   İstanbul Sultanbeyli'deki merkezimizden, cam işleme ve ayna tasarımı alanında yüksek kaliteli ve özelleştirilmiş çözümler sunuyoruz. Sultanbeyli ve çevresindeki müşterilerimize yönelik geniş hizmet yelpazemiz, duşakabinlerden dekoratif aynalara, özel tasarım camlardan güvenlik ve izolasyon sağlayan ürünlere kadar uzanmaktadır. İstanbul’un bu canlı semtinde, müşteri memnuniyetini ön planda tutarak, projelerinize değer katmayı ve beklentilerinizi aşmayı hedefliyoruz. Sultanbeyli merkezli olarak, bölgesel ihtiyaçlarınıza en uygun çözümleri sunmak için yerel pazarın dinamiklerine hakim bir yaklaşım sergiliyoruz. Projelerinizde size nasıl yardımcı olabileceğimizi keşfetmek ve Sultanbeyli'de cam ve ayna çözümleri konusunda lider seçeneğiniz olmak için bizimle iletişime geçin.
                 </p>
-
-                <a
-                  href="https://www.creative-tim.com/product/vue-material-kit"
-                  class="btn btn-sm mb-0 bg-gradient-success px-5 py-3 mt-4"
-                  >Hakkımızda</a
-                >
+                <RouterLink 
+                class="btn btn-sm mb-0 bg-gradient-success px-5 py-3 mt-4"
+                :to="{ name: 'aboutus' }"
+                >Hakkımızda</RouterLink>
               </div>
             </div>
           </div>
@@ -160,6 +146,7 @@ onUnmounted(() => {
               component="instagram"
               color="vimeo"
               label="TikTok"
+              marginEnd="0"
             />
           </div>
         </div>

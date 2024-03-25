@@ -5,11 +5,11 @@ import router from "@/router";
 defineProps({
   height:{
     type:String,
-    default:'50rem'
+    default:'20rem'
   },
   width:{
     type:String,
-    default:'50rem'
+    default:'20rem'
   },
 })
 
@@ -17,8 +17,8 @@ let gotoAddress = () => router.push({name:'address'})
 
 let mapOptions = {
         draggable: false,
-        zoomControl: false,
-        scrollwheel: false,
+        zoomControl: true,
+        scrollwheel: true,
         disableDoubleClickZoom: true,
   }
 
@@ -43,6 +43,9 @@ let markers = [
       :position="m.position"
       @click=gotoAddress
     >
+    <GMapInfoWindow>
+        Adres tarifi için tıklayın!
+      </GMapInfoWindow>
   </GMapMarker>
     </GMapMap>
   </template>

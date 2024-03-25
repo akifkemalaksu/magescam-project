@@ -16,10 +16,15 @@ defineProps({
     type: String,
     default: "",
   },
+  marginEnd:{
+    type: String,
+    default: "2"
+  }
 });
+
 </script>
 <template>
-  <a :href="route" class="btn me-2" :class="`btn-${color}`" target="_blank">
+  <a :href="route" class="btn" :class="`btn-${color} me-${marginEnd}`" target="_blank">
     <i
       class="fab"
       :class="`fa-${component} ${

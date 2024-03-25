@@ -1,6 +1,6 @@
 <script setup>
 import { computed  } from "vue";
-import DefaultCounterCard from "../../../examples/cards/counterCards/DefaultCounterCard.vue";
+import DefaultCounterCard from "../../../components/cards/counterCards/DefaultCounterCard.vue";
 
 let sinceYear = 1986;
 

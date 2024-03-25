@@ -1,8 +1,8 @@
 <script setup>
-import RotatingCard from "../../../examples/cards/rotatingCards/RotatingCard.vue";
-import RotatingCardFront from "../../../examples/cards/rotatingCards/RotatingCardFront.vue";
-import RotatingCardBack from "../../../examples/cards/rotatingCards/RotatingCardBack.vue";
-import DefaultInfoCard from "../../../examples/cards/infoCards/DefaultInfoCard.vue";
+import RotatingCard from "../../../components/cards/rotatingCards/RotatingCard.vue";
+import RotatingCardFront from "../../../components/cards/rotatingCards/RotatingCardFront.vue";
+import RotatingCardBack from "../../../components/cards/rotatingCards/RotatingCardBack.vue";
+import DefaultInfoCard from "../../../components/cards/infoCards/DefaultInfoCard.vue";
 
 import DekoratifAyna from "@/assets/images/dekoratifayna.jpg";
 import ZeminAyna from "@/assets/images/zeminayna.jpg";
@@ -24,12 +24,6 @@ import ZeminAyna from "@/assets/images/zeminayna.jpg";
               size="contain"
               title="Zemin Aynası"
               description="Zemin aynaları, geniş yansıma alanı sunarak odanızı daha geniş ve davetkar hale getirir. Ayakta durabilen tasarımları ile kolay yerleştirme imkanı sunar."
-              :action="[
-                {
-                  route: './/sections/page-sections/hero-sections.html',
-                  label: 'Daha fazla detay için',
-                },
-              ]"
             />
           </RotatingCard>
         </div>

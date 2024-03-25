@@ -1,8 +1,8 @@
 <script setup>
-import RotatingCard from "../../../examples/cards/rotatingCards/RotatingCard.vue";
-import RotatingCardFront from "../../../examples/cards/rotatingCards/RotatingCardFront.vue";
-import RotatingCardBack from "../../../examples/cards/rotatingCards/RotatingCardBack.vue";
-import DefaultInfoCard from "../../../examples/cards/infoCards/DefaultInfoCard.vue";
+import RotatingCard from "../../../components/cards/rotatingCards/RotatingCard.vue";
+import RotatingCardFront from "../../../components/cards/rotatingCards/RotatingCardFront.vue";
+import RotatingCardBack from "../../../components/cards/rotatingCards/RotatingCardBack.vue";
+import DefaultInfoCard from "../../../components/cards/infoCards/DefaultInfoCard.vue";
 
 import Pvc from "@/assets/images/pvc.jpg";
 import Sineklik from "@/assets/images/sineklik.jpg";
@@ -23,12 +23,6 @@ import Sineklik from "@/assets/images/sineklik.jpg";
               :image="Sineklik"
               title="Sineklik"
               description="Sineklikler, havalandırma ihtiyacını zararlı böceklerden korunarak sağlayan pratik bir çözümdür. Farklı montaj seçenekleriyle pencereler ve kapılar için uygundur, temiz hava alımını kolaylaştırırken evinizi korur."
-              :action="[
-                {
-                  route: './/sections/page-sections/hero-sections.html',
-                  label: 'Daha fazla detay için',
-                },
-              ]"
             />
           </RotatingCard>
         </div>
