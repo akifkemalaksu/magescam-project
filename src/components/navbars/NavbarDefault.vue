@@ -5,7 +5,7 @@ import { useWindowsWidth } from "../../assets/js/useWindowsWidth";
 
 // images
 import ArrDark from "@/assets/images/down-arrow-dark.svg";
-import DownArrWhite from "@/assets/img/down-arrow-white.svg";
+import DownArrWhite from "@/assets/images/down-arrow-white.svg";
 
 import Logo from "@/assets/images/logos/just-logo-original.png";
 
