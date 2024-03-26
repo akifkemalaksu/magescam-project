@@ -8,7 +8,7 @@ docker create --name magescam-container magescam
 rm -rf /var/www/magescam/*
 
 # Step 4: Copy the build files from the container to your Nginx directory
-docker cp magescam-container:/app/dist /var/www/magescam
+docker cp magescam-container:/app/dist/ /var/www/magescam/
 
 # Step 5: Remove the temporary container
 docker rm magescam-container
