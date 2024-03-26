@@ -1,20 +1,24 @@
-# Use an official Node.js runtime as a parent image
-FROM node:lts-alpine
+# Base image
+FROM node:14
 
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
-# Copy both 'package.json' and 'package-lock.json' (if available)
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install project dependencies
+# Install dependencies
 RUN npm install
 
-# Copy the project files into the Docker image
+# Copy the rest of your app's source code
 COPY . .
 
-# Build app for production with minification
+# Build your app
 RUN npm run build
 
-# No need to serve the app with Nginx inside the Docker container
-# The app's build artifacts are ready to be served by Nginx on the host
+# Make the build folder available on /app/dist
+VOLUME [ "/app/dist" ]
+
+# You don't need to start a server, since Nginx installed on your server will serve the files.
+# However, you can specify a command to keep the container running if necessary.
+CMD ["node"]
