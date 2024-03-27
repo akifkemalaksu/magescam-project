@@ -3,6 +3,7 @@ import { createPinia } from "pinia";
 import App from "./App.vue";
 import router from "./router";
 import VueGoogleMaps from '@fawmi/vue-google-maps'
+import keys from "./keys";
 
 // Nucleo Icons
 import "./assets/css/nucleo-icons.css";
@@ -17,7 +18,7 @@ app.use(router);
 app.use(materialKit);
 app.use(VueGoogleMaps, {
     load: {
-        key: 'AIzaSyDO7W2xsUxkVkytsXo7tNGzUzjrVfHebjc'
+        key: keys.googleMapsApiKey
     }
 })
 
