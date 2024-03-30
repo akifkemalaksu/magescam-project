@@ -52,8 +52,10 @@ onUnmounted(() => {
           <div class="col col-lg-2 mx-auto">
             <img 
         :src="logo"
-        :style="{height: '8rem',width:'12rem'}"
+        :style="{height: '8rem',width:'12rem', display:'block'}"
         alt="Mages Cam logo"
+        loading="lazy"
+        class="mx-auto"
          />
           </div>
         </div>

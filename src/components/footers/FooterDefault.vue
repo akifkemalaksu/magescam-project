@@ -23,7 +23,7 @@ let mailLink = computed(() => `mailto:${mail}`)
         </div>
         <div class="col-sm-12 col-md-6">
           <h6 class="fw-bold mb-4">Konum</h6>
-          <Gmap height="15rem" width="40rem"></Gmap>
+          <Gmap height="15rem" width="100%"></Gmap>
         </div>
         <div class="col-12">
           <div class="text-center">

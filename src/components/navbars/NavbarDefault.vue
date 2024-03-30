@@ -111,7 +111,7 @@ watch(
         title="Anasayfa"
         data-placement="bottom"
       >          
-      <img :src="Logo" :style="{height:'2rem', width:'3rem'}" alt="mages cam logo" />
+      <img :src="Logo" :style="{height:'2rem', width:'3rem'}" alt="mages cam logo" loading="lazy" />
       <strong class="ms-3">Mages Cam</strong>
   </a>
       

@@ -5,11 +5,9 @@ import router from "@/router";
 defineProps({
   height:{
     type:String,
-    default:'20rem'
   },
   width:{
     type:String,
-    default:'20rem'
   },
 })
 

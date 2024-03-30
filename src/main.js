@@ -9,7 +9,7 @@ import keys from "./keys";
 import "./assets/css/nucleo-icons.css";
 import "./assets/css/nucleo-svg.css";
 
-import materialKit from "./material-kit";
+import materialKit from "./material-kit.js";
 
 const app = createApp(App);
 

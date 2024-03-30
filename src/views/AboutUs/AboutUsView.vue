@@ -62,7 +62,8 @@ onUnmounted(() => {
               <img
               class="border-radius-xl"
               :src="outsideDukkan"
-              :style="{height: '35rem',width:'35rem'}"
+              loading="lazy"
+              :style="{height: '50vh',width:'100%'}"
               alt="Mages cam dışarıdan görünüm"
               />
             </div>
@@ -73,7 +74,8 @@ onUnmounted(() => {
               <img
               class="border-radius-xl"
               :src="insideDukkan"
-              :style="{height: '35rem',width:'35rem'}"
+              loading="lazy"
+              :style="{height: '50vh',width:'100%'}"
               alt="Mages cam içeriden görünüm"
               />
             </div>
