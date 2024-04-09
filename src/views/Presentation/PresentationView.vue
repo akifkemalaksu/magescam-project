@@ -55,7 +55,7 @@ onUnmounted(() => {
         :style="{height: '8rem',width:'12rem', display:'block'}"
         alt="Mages Cam logo"
         loading="lazy"
-        class="mx-auto"
+        class="mx-auto mt-6 mt-md-4"
          />
           </div>
         </div>
@@ -75,7 +75,7 @@ onUnmounted(() => {
       </div>
     </div>
 
-  <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
+  <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n4 mt-md-n6">
     <PresentationCounter />
     <DusakabinPresentation id="dusakabin"/>
     <CamPresentation id="cam" />

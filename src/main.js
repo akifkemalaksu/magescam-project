@@ -1,8 +1,9 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
+import VueGoogleMaps from '@fawmi/vue-google-maps'
+import {} from 'bootstrap';
 import App from "./App.vue";
 import router from "./router";
-import VueGoogleMaps from '@fawmi/vue-google-maps'
 import keys from "./keys";
 
 // Nucleo Icons
