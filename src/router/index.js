@@ -33,7 +33,7 @@ const router = createRouter({
       path: "/adres-tarifi",
       beforeEnter: (to, from, next) => {
         window.open(
-          "https://www.google.com/maps/place/40%C2%B057'39.0%22N+29%C2%B016'04.0%22E/@40.960827,29.2652011,17z/data=!3m1!4b1!4m4!3m3!8m2!3d40.960823!4d29.267776?entry=ttu",
+          "https://www.google.com/maps/dir//Mehmet+Akif,+Mages+Cam,+Petrol+Yolu+Cd.+No:222,+34920+Sultanbeyli%2F%C4%B0stanbul/@40.9608107,29.2676792,21z/data=!4m8!4m7!1m0!1m5!1m1!1s0x14cad1eb33de918d:0xc3405f9ede8e5818!2m2!1d29.2678063!2d40.9607645?entry=ttu",
           "_blank"
         );
       }

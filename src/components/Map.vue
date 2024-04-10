@@ -19,8 +19,8 @@ let mapOptions = {
         scrollwheel: true,
         disableDoubleClickZoom: true,
   }
-
-let center = { lat: 40.960823, lng: 29.267776 }
+  
+let center = { lat: 40.96077499092263, lng: 29.26780726510754 }
 let markers = [
         {
           position: center,
