@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import PresentationView from "../views/Presentation/PresentationView.vue";
 import AboutUsView from "../views/AboutUs/AboutUsView.vue";
 import Contact from "@/views/Contact/Contact.vue";
+import NotFound from "@/views/errors/NotFound.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +22,11 @@ const router = createRouter({
       path: "/iletisim",
       name: "contact",
       component: Contact,
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      name: "404",
+      component: NotFound,
     },
     {
       name: "address",

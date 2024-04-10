@@ -67,9 +67,9 @@ onUnmounted(() => {
             >
               Mages Cam
             </h1>
-            <p class="lead text-white ms-2" :style="{ fontWeight: '500' }">
+            <h2 class="lead text-white ms-2" :style="{ fontWeight: '500' }">
               Cama dair herşey.
-            </p>
+            </h2>
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@ onUnmounted(() => {
                   İstanbul Sultanbeyli'deki merkezimizden, cam işleme ve ayna tasarımı alanında yüksek kaliteli ve özelleştirilmiş çözümler sunuyoruz. Sultanbeyli ve çevresindeki müşterilerimize yönelik geniş hizmet yelpazemiz, duşakabinlerden dekoratif aynalara, özel tasarım camlardan güvenlik ve izolasyon sağlayan ürünlere kadar uzanmaktadır. İstanbul’un bu canlı semtinde, müşteri memnuniyetini ön planda tutarak, projelerinize değer katmayı ve beklentilerinizi aşmayı hedefliyoruz. Sultanbeyli merkezli olarak, bölgesel ihtiyaçlarınıza en uygun çözümleri sunmak için yerel pazarın dinamiklerine hakim bir yaklaşım sergiliyoruz. Projelerinizde size nasıl yardımcı olabileceğimizi keşfetmek ve Sultanbeyli'de cam ve ayna çözümleri konusunda lider seçeneğiniz olmak için bizimle iletişime geçin.
                 </p>
                 <RouterLink 
-                class="btn btn-sm mb-0 bg-gradient-success px-5 py-3 mt-4"
+                class="btn btn-sm mb-0 bg-gradient-info px-5 py-3 mt-4"
                 :to="{ name: 'aboutus' }"
                 >Hakkımızda</RouterLink>
               </div>
