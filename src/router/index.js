@@ -24,9 +24,13 @@ const router = createRouter({
       component: Contact,
     },
     {
-      path: "/:pathMatch(.*)*",
+      path: "/notfound",
       name: "404",
       component: NotFound,
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: '/notfound'
     },
     {
       name: "address",
