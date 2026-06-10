@@ -45,7 +45,6 @@ onUnmounted(() => {
     id="header"
       class="page-header min-vh-75"
       :style="`background-image: url(${background})`"
-      loading="lazy"
     >
       <div class="container">
         <div class="row">
@@ -94,7 +93,6 @@ onUnmounted(() => {
         :style="{
           backgroundImage: `url(${glassBackground})`
         }"
-        loading="lazy"
       >
         <span class="mask bg-gradient-dark"></span>
         <div class="container">

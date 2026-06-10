@@ -1,0 +1,6 @@
+services:
+  magescam:
+    image: ghcr.io/akifkemalaksu/magescam-project:latest
+    restart: unless-stopped
+    ports:
+      - "80:80"

@@ -46,7 +46,6 @@ onUnmounted(() => {
         :style="{
           backgroundImage: `url(${background})`
         }"
-        loading="lazy"
       >
         <span class="mask bg-gradient-dark"></span>
         <div class="container">

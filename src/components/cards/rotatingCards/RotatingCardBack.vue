@@ -19,10 +19,7 @@ defineProps({
   },
   action: {
     type: Array,
-    route: String,
-    label: String,
-    color: String,
-    required: true,
+    default: () => [],
   },
 });
 </script>

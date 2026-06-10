@@ -1,24 +1,15 @@
-# Base image
-FROM node:14
-
-# Set working directory
+# Stage 1: Build
+FROM node:20-alpine AS builder
 WORKDIR /app
-
-# Copy package.json and package-lock.json
 COPY package*.json ./
-
-# Install dependencies
-RUN npm install
-
-# Copy the rest of your app's source code
+RUN npm ci
 COPY . .
-
-# Build your app
+ARG VITE_GOOGLE_MAPS_API_KEY
+ENV VITE_GOOGLE_MAPS_API_KEY=$VITE_GOOGLE_MAPS_API_KEY
 RUN npm run build
 
-# Make the build folder available on /app/dist
-VOLUME [ "/app/dist" ]
-
-# You don't need to start a server, since Nginx installed on your server will serve the files.
-# However, you can specify a command to keep the container running if necessary.
-CMD ["node"]
+# Stage 2: Serve
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

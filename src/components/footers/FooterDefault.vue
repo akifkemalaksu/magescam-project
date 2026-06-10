@@ -2,6 +2,8 @@
 import Gmap from "@/components/Map.vue";
 import { computed } from "vue";
 
+const currentYear = new Date().getFullYear();
+
 let phoneNumber = "+905555870937"
 let mail = "mehmet37aksu@gmail.com"
 let address = "Mehmet Akif Mahallesi Petrol Yolu Caddesi No:222 Sultanbeyli İstanbul"
@@ -29,7 +31,7 @@ let mailLink = computed(() => `mailto:${mail}`)
           <div class="text-center">
             <p class="text-dark my-4 text-sm font-weight-normal">
               Tüm hakları saklıdır. Copyright ©
-              2024
+              {{ currentYear }}
               Mages Cam by
               <a href="https://akifkemalaksu.com" target="_blank"
                 >akifkemalaksu.com</a
