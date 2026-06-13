@@ -58,11 +58,13 @@ const getTextColor = () => {
 };
 
 // set nav color on mobile && desktop
+// On mobile, transparent navbar should keep light text (dark bg hero section)
+// Only force dark text on mobile for sticky/light backgrounds
 
 let textDark = ref(props.darkText);
 const { type } = useWindowsWidth();
 
-if (type.value === "mobile") {
+if (type.value === "mobile" && !props.transparent) {
   textDark.value = true;
 } else if (type.value === "desktop" && textDark.value == false) {
   textDark.value = false;
@@ -71,7 +73,7 @@ if (type.value === "mobile") {
 watch(
   () => type.value,
   (newValue) => {
-    if (newValue === "mobile") {
+    if (newValue === "mobile" && !props.transparent) {
       textDark.value = true;
     } else {
       textDark.value = false;

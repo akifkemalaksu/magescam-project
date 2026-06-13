@@ -8,13 +8,14 @@ import DekoratifAyna from "@/assets/images/dekoratifayna.jpg";
 import ZeminAyna from "@/assets/images/zeminayna.jpg";
 </script>
 <template>
-  <section class="my-5 py-5">
+  <section class="my-5 py-5" style="scroll-margin-top: 100px;">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 ms-auto me-auto p-lg-4 mt-lg-0 mt-4">
           <RotatingCard>
             <RotatingCardFront
               :image="DekoratifAyna"
+              size="contain"
               title="Dekoratif Ayna"
               description="Sanatsal dokunuşlarla mekanınıza estetik bir hava katın. Dekoratif aynalar, odanızın stilini yükselterek benzersiz bir atmosfer oluşturur."
             />

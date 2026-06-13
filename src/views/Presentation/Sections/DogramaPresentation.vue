@@ -8,19 +8,21 @@ import Pvc from "@/assets/images/pvc.jpg";
 import Sineklik from "@/assets/images/sineklik.jpg";
 </script>
 <template>
-  <section class="my-5 py-5">
+  <section class="my-5 py-5" style="scroll-margin-top: 100px;">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 ms-auto me-auto p-lg-4 mt-lg-0 mt-4">
           <RotatingCard>
             <RotatingCardFront
               :image="Pvc"
+              size="contain"
               title="Pvc Doğrama"
               description="Isı ve ses yalıtımında üstün performans sunan PVC doğrama, enerji verimliliği yüksek ve bakımı kolay bir seçenektir. Çeşitli renk ve tasarımlarıyla her türlü bina estetiğine uyum sağlar."
             />
 
             <RotatingCardBack
               :image="Sineklik"
+              size="contain"
               title="Sineklik"
               description="Sineklikler, havalandırma ihtiyacını zararlı böceklerden korunarak sağlayan pratik bir çözümdür. Farklı montaj seçenekleriyle pencereler ve kapılar için uygundur, temiz hava alımını kolaylaştırırken evinizi korur."
             />

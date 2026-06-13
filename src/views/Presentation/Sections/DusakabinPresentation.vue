@@ -8,7 +8,7 @@ import KoseDusakabin from "@/assets/images/kosedusakabin.jpg";
 import YarimDaireDusakabin from "@/assets/images/yarimdairedusakabin.jpg";
 </script>
 <template>
-  <section class="my-5 py-5">
+  <section class="my-5 py-5" style="scroll-margin-top: 100px;">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 ms-auto me-auto p-lg-4 mt-lg-0 mt-4">
