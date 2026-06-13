@@ -140,7 +140,7 @@ onUnmounted(() => {
               label="Facebook"
             />
             <MaterialSocialButton
-              route="https://www.instagram.com/mages__cam?igsh=MWhlMjg1a3lwd2Rheg=="
+              route="https://www.instagram.com/magescam?igsh=MWhlMjg1a3lwd2Rheg=="
               component="instagram"
               color="dribbble"
               label="Instagram"
