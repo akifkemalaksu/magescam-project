@@ -89,17 +89,12 @@ onUnmounted(() => {
 
 
     <div
-      class="container-fluid mt-sm-5 border-radius-xl"
+      class="page-header py-6 py-md-5 my-sm-3 mb-3 border-radius-xl position-relative"
       :style="{
-        background: 'linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25))'
+        backgroundColor: '#191925',
+        backgroundImage: `url(${glassBackground})`
       }"
     >
-      <div
-        class="page-header py-6 py-md-5 my-sm-3 mb-3 border-radius-xl"
-        :style="{
-          backgroundImage: `url(${glassBackground})`
-        }"
-      >
         <span class="mask bg-gradient-dark"></span>
         <div class="container">
           <div class="row">
@@ -126,7 +121,6 @@ onUnmounted(() => {
           </div>
         </div>
       </div>
-    </div>
     <div class="py-5">
       <div class="container">
         <div class="row">
