@@ -1,36 +1,21 @@
 <script setup>
-import Gmap from "@/components/Map.vue";
-import { computed } from "vue";
+import { RouterLink } from "vue-router";
 
 const currentYear = new Date().getFullYear();
-
-let phoneNumber = "+905555870937"
-let mail = "mehmet37aksu@gmail.com"
-let address = "Mehmet Akif Mahallesi Petrol Yolu Caddesi No:222 Sultanbeyli İstanbul"
-
-let phoneNumberHtml = "0 555 587 09 37"
-let phoneLink = computed(() => `tel:${phoneNumber}`) 
-let mailLink = computed(() => `mailto:${mail}`) 
-
 </script>
 <template>
   <footer class="footer pt-5">
     <div class="container">
       <div class="row">
-        <div class="col-sm-12 col-md-6">
-          <h6 class="fw-bold mb-4">İletişim</h6>
-          <p> <a :href="phoneLink"> <i class="fas fa-phone me-3"></i> {{ phoneNumberHtml }}</a> </p>
-          <p> <a :href="mailLink"> <i class="fas fa-at me-3"></i> {{ mail }}</a> </p>
-          <p> <i class="fas fa-map-marker-alt me-3"></i> {{ address }} </p>
-        </div>
-        <div class="col-sm-12 col-md-6">
-          <h6 class="fw-bold mb-4">Konum</h6>
-          <Gmap height="15rem" width="100%"></Gmap>
-        </div>
         <div class="col-12">
           <div class="text-center">
+            <RouterLink :to="{name:'contact'}" class="text-dark fw-bold">Bize Ulaşın</RouterLink>
+            <span class="mx-3 text-secondary">|</span>
+            <RouterLink :to="{name:'aboutus'}" class="text-dark fw-bold">Hakkımızda</RouterLink>
+          </div>
+          <div class="text-center mt-3">
             <p class="text-dark my-4 text-sm font-weight-normal">
-              Tüm hakları saklıdır. Copyright ©
+              Tüm hakları saklıdır. Copyright &copy;
               {{ currentYear }}
               Mages Cam by
               <a href="https://akifkemalaksu.com" target="_blank"
