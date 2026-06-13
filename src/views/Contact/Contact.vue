@@ -34,12 +34,17 @@ let mailLink = computed(() => `mailto:${mail}`)
   </div>
   <div class="card card-body blur shadow-blur mx-1 mx-md-4 mt-7">
     <div
-      class="page-header py-6 py-md-5 my-sm-3 mb-3 border-radius-xl"
+      class="container-fluid mt-sm-5 border-radius-xl"
       :style="{
-        backgroundColor: '#191925',
-        backgroundImage: `url(${background})`
+        background: 'linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25))'
       }"
     >
+      <div
+        class="page-header py-6 py-md-5 my-sm-3 mb-3 border-radius-xl"
+        :style="{
+          backgroundImage: `url(${background})`
+        }"
+      >
         <span class="mask bg-gradient-dark"></span>
         <div class="container">
           <div class="row ">
@@ -59,6 +64,7 @@ let mailLink = computed(() => `mailto:${mail}`)
           </div>
         </div>
       </div>
+    </div>
     <div class="py-5">
       <div class="container">
         <div class="row">
