@@ -52,14 +52,14 @@ let mailLink = computed(() => `mailto:${mail}`)
               <h1 class="text-white text-center">İletişim</h1>
             </div>
             <div class="col-sm-12 col-md-6 mt-5">
-              <h3 class="text-white">Bize aşağıdaki iletişim kanallarından ulaşabilirsiniz.</h3>
-              <h4 class="mt-5"> <a :href="phoneLink" class="text-white"> <i class="fas fa-phone me-3"></i> {{ phoneNumberHtml }}</a> </h4>
-              <h4 class="mt-5"> <RouterLink :to="{name:'whatsapp'}" class="text-white"> <i class="fab fa-whatsapp me-3"></i> {{ phoneNumberHtml }}</RouterLink> </h4>
-              <h4 class="mt-5"> <a :href="mailLink" class="text-white"> <i class="fas fa-at me-3"></i> {{ mail }}</a> </h4>
-              <h4 class="mt-5 text-white"> <i class="fas fa-map-marker-alt me-3"></i> {{ address }} </h4>
+              <h4 class="text-white">Bize aşağıdaki iletişim kanallarından ulaşabilirsiniz.</h4>
+              <h5 class="mt-4"> <a :href="phoneLink" class="text-white"> <i class="fas fa-phone me-3"></i> {{ phoneNumberHtml }}</a> </h5>
+              <h5 class="mt-4"> <RouterLink :to="{name:'whatsapp'}" class="text-white"> <i class="fab fa-whatsapp me-3"></i> WhatsApp'tan Ulaş</RouterLink> </h5>
+              <h5 class="mt-4"> <a :href="mailLink" class="text-white"> <i class="fas fa-at me-3"></i> {{ mail }}</a> </h5>
+              <h5 class="mt-4 text-white"> <i class="fas fa-map-marker-alt me-3"></i> {{ address }} </h5>
             </div>
             <div class="col-sm-12 col-md-6 mt-5">
-              <h3 class="text-white">Aşağıdan direkt konumumuza ulaşabilirsiniz.</h3>
+              <h4 class="text-white">Aşağıdan direkt konumumuza ulaşabilirsiniz.</h4>
               <Gmap class="mt-5" height="50vh" width="100%"></Gmap>
             </div>
           </div>
