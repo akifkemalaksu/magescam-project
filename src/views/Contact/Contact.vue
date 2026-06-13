@@ -59,8 +59,7 @@ let mailLink = computed(() => `mailto:${mail}`)
               <h5 class="mt-4 text-white"> <i class="fas fa-map-marker-alt me-3"></i> {{ address }} </h5>
             </div>
             <div class="col-sm-12 col-md-6 mt-5">
-              <h4 class="text-white">Aşağıdan direkt konumumuza ulaşabilirsiniz.</h4>
-              <Gmap class="mt-5" height="35rem" width="100%"></Gmap>
+              <Gmap height="35rem" width="100%"></Gmap>
             </div>
           </div>
         </div>
