@@ -80,7 +80,7 @@ onUnmounted(() => {
       </div>
     </div>
 
-  <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n4 mt-md-n6">
+  <div class="card card-body blur shadow-blur mx-1 mx-md-4 mt-n4 mt-md-n6">
     <PresentationCounter />
     <DusakabinPresentation id="dusakabin"/>
     <CamPresentation id="cam" />

@@ -34,7 +34,7 @@ onUnmounted(() => {
       </div>
     </div>
   </div>
-  <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-7">
+  <div class="card card-body blur shadow-blur mx-1 mx-md-4 mt-7">
     <div
       class="container-fluid mt-sm-5 border-radius-xl"
       :style="{
