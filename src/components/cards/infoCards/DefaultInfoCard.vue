@@ -57,7 +57,7 @@ export default {
       >
         {{ typeof title == "string" ? title : title.text }}
       </h5>
-      <p :class="typeof description == 'string' ? 'pe-5' : description.class">
+      <p :class="typeof description == 'string' ? 'pe-3' : description.class">
         {{ typeof description == "string" ? description : description.text }}
       </p>
     </div>
