@@ -1,9 +1,19 @@
 <script setup>
 import { RouterLink } from "vue-router";
+
+import NavbarDefault from "../../components/navbars/NavbarDefault.vue";
+import DefaultFooter from "../../components/footers/FooterDefault.vue";
 </script>
 
 
 <template>
+  <div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+      <div class="col-12">
+        <NavbarDefault :dark="true"  />
+      </div>
+    </div>
+  </div>
   <section class="py-6">
 	<div class="container bg-light min-vh-50 py-6 d-flex justify-content-center align-items-center" style="max-width:1920px">
 		<div class="row">
@@ -26,6 +36,6 @@ import { RouterLink } from "vue-router";
 		</div>
 	</div>
 </section>
-
+<DefaultFooter />
 
   </template>

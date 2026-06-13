@@ -60,7 +60,7 @@ let mailLink = computed(() => `mailto:${mail}`)
             </div>
             <div class="col-sm-12 col-md-6 mt-5">
               <h4 class="text-white">Aşağıdan direkt konumumuza ulaşabilirsiniz.</h4>
-              <Gmap class="mt-5" height="50vh" width="100%"></Gmap>
+              <Gmap class="mt-5" height="20rem" width="100%"></Gmap>
             </div>
           </div>
         </div>
