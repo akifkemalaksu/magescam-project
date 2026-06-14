@@ -39,7 +39,7 @@ const descriptions = {
 
       <div class="row">
         <div
-          v-for="catKey of Object.keys(cats)"
+          v-for="catKey of Object.keys(cats).filter(k => k !== 'menfez')"
           :key="catKey"
           class="col-lg-6 mb-4"
         >
