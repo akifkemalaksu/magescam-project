@@ -1,8 +1,5 @@
-// Load all carousel images using Vite's glob import
-const modules = import.meta.glob(
-  "@/assets/images/carousel/*.{webp,svg}",
-  { eager: true, import: "default" }
-);
+// Load all carousel images using Vite's globEager (Vite 2.x compatible)
+const modules = import.meta.globEager("../assets/images/carousel/*.{webp,svg}");
 
 /**
  * Parse filename like "dusakabin-kose-1.webp" into { category: "dusakabin-kose", index: 1 }
@@ -17,12 +14,13 @@ function parseFilename(path) {
 // Organize images by category
 const imageMap = {};
 
-for (const [path, src] of Object.entries(modules)) {
+for (const [path, mod] of Object.entries(modules)) {
   const parsed = parseFilename(path);
   if (!parsed) continue;
   const { category, index } = parsed;
   if (!imageMap[category]) imageMap[category] = [];
-  imageMap[category].push({ src, index });
+  // In Vite 2, globEager returns raw module objects; default export is the URL
+  imageMap[category].push({ src: mod.default || mod, index });
 }
 
 // Sort each category by index
