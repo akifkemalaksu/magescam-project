@@ -1,29 +1,18 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-		<!--	created with www.mysitemapgenerator.com	-->
-		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9">
 <url>
-	<loc>https://www.magescam.com/</loc>
-	<lastmod>2024-04-14T23:37:02+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://magescam.com/</loc>
+  <lastmod>2026-06-14</lastmod>
+  <priority>1.0</priority>
 </url>
 <url>
-	<loc>https://www.magescam.com/hakkimizda</loc>
-	<lastmod>2024-04-14T23:37:02+01:00</lastmod>
-	<priority>1.0</priority>
+  <loc>https://magescam.com/hakkimizda</loc>
+  <lastmod>2026-06-14</lastmod>
+  <priority>0.8</priority>
 </url>
 <url>
-	<loc>https://www.magescam.com/iletisim</loc>
-	<lastmod>2024-04-14T23:37:02+01:00</lastmod>
-	<priority>1.0</priority>
-</url>
-<url>
-	<loc>https://www.magescam.com/adres-tarifi</loc>
-	<lastmod>2024-04-14T23:37:02+01:00</lastmod>
-	<priority>1.0</priority>
-</url>
-<url>
-	<loc>https://www.magescam.com/whatsapp</loc>
-	<lastmod>2024-04-14T23:37:02+01:00</lastmod>
-	<priority>1.0</priority>
+  <loc>https://magescam.com/iletisim</loc>
+  <lastmod>2026-06-14</lastmod>
+  <priority>0.7</priority>
 </url>
 </urlset>
