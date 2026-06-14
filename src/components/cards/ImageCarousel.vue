@@ -331,6 +331,9 @@ function closePreview() {
     padding: 4px 10px;
     font-size: 0.75rem;
   }
+  .mk-carousel-caption h6 {
+    display: none;
+  }
   .mk-carousel-caption {
     position: relative;
     right: 0;
