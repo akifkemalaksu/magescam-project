@@ -195,8 +195,9 @@ function closePreview() {
 .mk-carousel-img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  background: #e9ecef;
   transition: transform 0.3s ease;
 }
 .mk-carousel-image-wrapper:hover .mk-carousel-img {
