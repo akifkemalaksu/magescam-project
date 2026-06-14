@@ -107,10 +107,10 @@ function closePreview() {
       </button>
     </div>
 
-    <!-- Description below carousel -->
+    <!-- Description below carousel (only on desktop, caption handles mobile) -->
     <p
       v-if="images[activeIndex]?.description"
-      class="text-center text-muted mt-2 mb-0 small"
+      class="d-none d-md-block text-center text-muted mt-2 mb-0 small"
     >
       {{ images[activeIndex].description }}
     </p>
