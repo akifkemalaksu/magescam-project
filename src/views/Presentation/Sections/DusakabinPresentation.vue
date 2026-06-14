@@ -1,56 +1,71 @@
 <script setup>
-import RotatingCard from "../../../components/cards/rotatingCards/RotatingCard.vue";
-import RotatingCardFront from "../../../components/cards/rotatingCards/RotatingCardFront.vue";
-import RotatingCardBack from "../../../components/cards/rotatingCards/RotatingCardBack.vue";
-import DefaultInfoCard from "../../../components/cards/infoCards/DefaultInfoCard.vue";
+import ImageCarousel from "../../../components/cards/ImageCarousel.vue";
+import { getCategoryImages } from "../../../utils/imageLoader.js";
 
-import KoseDusakabin from "@/assets/images/kosedusakabin.jpg";
-import YarimDaireDusakabin from "@/assets/images/yarimdairedusakabin.jpg";
+const cats = getCategoryImages("dusakabin");
+
+const titles = {
+  kose: "Köşe Duşakabin",
+  "yarim-daire": "Yarım Daire Duşakabin",
+  "kuvet-uzeri": "Küvet Üzeri Duşakabin",
+  "walk-in": "Walk-In Duşakabin",
+};
+
+const descriptions = {
+  kose: [
+    "90x90 cm ölçülerinde temperli cam, krom menteşe sistemi",
+    "Asimetrik köşe tasarımı, 6 mm temperli cam, paslanmaz aksesuar",
+    "Döner kapılı köşe model, kiremit desenli dış cephe",
+    "Sürgülü kapılı geniş köşe duşakabin, mermer görünümlü tepsi",
+  ],
+  "yarim-daire": [
+    "100x100 cm radyüslü yarım daire model, kavisli ön yüz",
+    "Döner kapılı yarım daire duşakabin, altın rengi profil",
+    "Sürgülü kapılı geniş yarım daire, beyaz kompakt tepsi",
+    "90x90 cm kompakt yarım daire, krom fitil ve tutamak",
+  ],
+  "kuvet-uzeri": [
+    "Küvet başına monte sabit panel + hareketli kanat",
+    "Akrilik küvet üzeri katlanır kanat sistemi",
+    "Köşe küvet üzeri cam bölme, 6 mm temperli cam",
+    "Düz küvet üzeri sürgülü cam panel sistemi",
+  ],
+  "walk-in": [
+    "Kapısız walk-in tasarım, 8 mm temperli cam, L şeklinde panel",
+    "Tek sabit cam panelli minimalist walk-in duş",
+    "Geniş walk-in alan, ince profil, 6 mm temperli cam",
+    "Modern walk-in duşakabin, krom aksesuarlı, kare tepsi",
+  ],
+};
 </script>
+
 <template>
   <section class="my-5 py-5" style="scroll-margin-top: 100px;">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 ms-auto me-auto p-lg-4 mt-lg-0 mt-4">
-          <RotatingCard>
-            <RotatingCardFront
-              :image="KoseDusakabin"
-              size="contain"
-              title="Köşe Duşakabin"
-              description="Küçük banyolar için ideal olan köşe duşakabinler, alanı verimli kullanmanıza olanak tanır."
-            />
-
-            <RotatingCardBack
-              :image="YarimDaireDusakabin"
-              size="contain"
-              title="Yarım Daire Duşakabin"
-              description="Yarım daire veya kavisli ön yüze sahip olan bu modeller, modern bir görünüm sunar ve banyonuza şık bir dokunuş ekler."
-            />
-          </RotatingCard>
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <h2 class="font-weight-bolder">Duşakabin Çeşitleri</h2>
+          <p class="text-muted">
+            Banyonuza uygun geniş duşakabin model yelpazemizle kaliteli ve şık çözümler sunuyoruz.
+          </p>
         </div>
-        <div class="col-lg-6 ms-auto">
-          <div class="row justify-content-start">
-            <DefaultInfoCard
-              title="Köşe Duşakabinler"
-              description="Alan tasarrufu sağlayan köşe duşakabinleri, küçük banyolar için idealdir; akıllıca tasarımıyla hem fonksiyonel hem de estetik bir çözüm sunar."
-            />
-            <DefaultInfoCard
-              title="Yarım Daire Duşakabinler"
-              description="Yarım daire duşakabinler, kavisli tasarımı sayesinde banyoya modern bir hava katarken, geniş kullanım alanı sunar."
-            />
-          </div>
-          <div class="row justify-content-start mt-5">
-            <DefaultInfoCard
-              class="mt-3"
-              title="Küvet Üzeri Duşakabinler"
-              description="Küvet üzeri duşakabinler, mevcut alanı çift amaçlı kullanarak hem duşakabin hem de küvet rahatlığı sağlar; banyonuza pratik bir çekicilik katar."
-            />
-            <DefaultInfoCard
-              class="mt-3"
-              title="Yürüyüş Yolu (Walk-In) Duşakabinler"
-              description="Kapısız ve engelsiz tasarımıyla yürüyüş yolu duşakabinler, kolay erişim ve modern bir görünüm sunarak banyonuzu lüks bir alana dönüştürür."
-            />
-          </div>
+      </div>
+
+      <div class="row">
+        <div
+          v-for="(catKey, idx) of Object.keys(cats)"
+          :key="catKey"
+          class="col-lg-6 mb-4"
+        >
+          <ImageCarousel
+            :id="'dusakabin-' + catKey"
+            :title="titles[catKey] || catKey"
+            :images="cats[catKey].map((img, i) => ({
+              src: img.src,
+              title: (titles[catKey] || catKey) + ' ' + (i + 1),
+              description: (descriptions[catKey] || [])[i] || ''
+            }))"
+          />
         </div>
       </div>
     </div>

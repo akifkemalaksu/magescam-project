@@ -2,25 +2,26 @@
 import ImageCarousel from "../../../components/cards/ImageCarousel.vue";
 import { getCategoryImages } from "../../../utils/imageLoader.js";
 
-const cats = getCategoryImages("dograma");
+const cats = getCategoryImages("balkon");
 
 const titles = {
-  pvc: "PVC Doğrama",
-  aluminum: "Alüminyum Doğrama",
+  katlanir: "Katlanır Balkon Camı",
+  surgulu: "Sürgülü Balkon Camı",
 };
 
 const descriptions = {
-  pvc: [
-    "Beyaz PVC pencere doğrama, ısı yalıtımlı çift cam",
-    "Ahşap desenli PVC pencere, enerji verimli profil",
-    "PVC sürme kapı sistemi, geniş açıklık, dayanıklı malzeme",
-    "Isıcamlı PVC doğrama, ses yalıtımlı, çok odacıklı profil",
+  katlanir: [
+    "4 kanatlı katlanır cam balkon sistemi, alüminyum profil",
+    "Akordiyon tip katlanır balkon camı, polycarbon aksamlı",
+    "Isıcamlı katlanır balkon sistemi, 6 mm temperli cam",
+    "2 kanatlı katlanır balkon camı, kilitli kulp sistemi",
   ],
-  aluminum: [
-    "Sürme alüminyum kapı, termal kırıntılı profil, ısı yalıtımlı",
-    "Katlanır alüminyum kapı sistemi, geniş açılım, modern tasarım",
-    "Alüminyum pencere doğrama, dayanıklı ve hafif profil",
-    "",
+  surgulu: [
+    "2 kanat sürme cam balkon, alüminyum raylı sistem",
+    "3 kanat sürgülü balkon camı, sessiz ray mekanizması",
+    "Geniş açıklıklı sürme cam balkon, ısıcam yalıtımlı",
+    "Raylı sürgülü cam balkon sistemi, kilitlenebilir panel",
+    "Ekstra geniş sürme cam balkon, 5 kanatlı sistem",
   ],
 };
 </script>
@@ -30,9 +31,9 @@ const descriptions = {
     <div class="container">
       <div class="row mb-4">
         <div class="col-12 text-center">
-          <h2 class="font-weight-bolder">Doğrama Çeşitleri</h2>
+          <h2 class="font-weight-bolder">Balkon Camı Sistemleri</h2>
           <p class="text-muted">
-            PVC ve alüminyum doğrama çözümlerimizle evinize konfor ve güvenlik katın.
+            Balkonunuzu katlanır veya sürgülü cam sistemlerimizle 4 mevsim kullanıma açın.
           </p>
         </div>
       </div>
@@ -44,7 +45,7 @@ const descriptions = {
           class="col-lg-6 mb-4"
         >
           <ImageCarousel
-            :id="'dograma-' + catKey"
+            :id="'balkon-' + catKey"
             :title="titles[catKey] || catKey"
             :images="cats[catKey].map((img, i) => ({
               src: img.src,

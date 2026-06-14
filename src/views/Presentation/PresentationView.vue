@@ -12,8 +12,10 @@ import MaterialSocialButton from "@/components/MaterialSocialButton.vue";
 import PresentationCounter from "./Sections/PresentationCounter.vue";
 import DusakabinPresentation from "./Sections/DusakabinPresentation.vue";
 import CamPresentation from "./Sections/CamPresentation.vue";
+import BalkonPresentation from "./Sections/BalkonPresentation.vue";
 import AynaPresentation from "./Sections/AynaPresentation.vue";
 import DogramaPresentation from "./Sections/DogramaPresentation.vue";
+import SineklikHavalandirmaPresentation from "./Sections/SineklikHavalandirmaPresentation.vue";
 
 //images
 import background from "@/assets/images/header-background-presentation.jpg";
@@ -84,8 +86,10 @@ onUnmounted(() => {
     <PresentationCounter />
     <DusakabinPresentation id="dusakabin"/>
     <CamPresentation id="cam" />
+    <BalkonPresentation id="balkon" />
     <AynaPresentation id="ayna" />
     <DogramaPresentation id="dograma-cesitleri" />
+    <SineklikHavalandirmaPresentation id="sineklik-havalandirma" />
 
 
     <div

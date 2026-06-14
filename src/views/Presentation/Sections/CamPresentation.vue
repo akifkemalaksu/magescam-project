@@ -1,56 +1,71 @@
 <script setup>
-import RotatingCard from "../../../components/cards/rotatingCards/RotatingCard.vue";
-import RotatingCardFront from "../../../components/cards/rotatingCards/RotatingCardFront.vue";
-import RotatingCardBack from "../../../components/cards/rotatingCards/RotatingCardBack.vue";
-import DefaultInfoCard from "../../../components/cards/infoCards/DefaultInfoCard.vue";
+import ImageCarousel from "../../../components/cards/ImageCarousel.vue";
+import { getCategoryImages } from "../../../utils/imageLoader.js";
 
-import MasaCam from "@/assets/images/masacam.jpg";
-import VitrinCam from "@/assets/images/vitrincam.jpg";
+const cats = getCategoryImages("cam");
+
+const titles = {
+  masa: "Masa Camı",
+  vitrin: "Vitrin Camı",
+  kapi: "Kapı Camı",
+  dekoratif: "Dekoratif Cam",
+};
+
+const descriptions = {
+  masa: [
+    "6 mm temperli düz masa camı, oval tasarım, zımparalanmış kenar",
+    "10 mm temperli dikdörtgen masa camı, şeffaf ve dayanıklı",
+    "Yuvarlak masa camı, 8 mm temperli, pürüzsüz yüzey",
+    "Özel ölçülü masa camı, lamine seçenek, isteğe bağlı renk",
+  ],
+  vitrin: [
+    "5 mm düz cam vitrin, şeffaf ve sağlam camekan",
+    "Temperli vitrin camı, raf sistemli mağaza vitrini",
+    "Geniş mağaza vitrin camı, çerçevesiz tasarım",
+    "Camekan tipi vitrin camı, 6 mm temperli, kayıt açıklıklı",
+  ],
+  kapi: [
+    "Ahşap kapı cam dolgu, buzlu cam, oyma desenli",
+    "Çelik kapı camı, 4 mm temperli, dekoratif bantlı",
+    "İç kapı camı, kumlama desenli, özel ölçü",
+    "Banyo kapısı buzlu cam, mahremiyet sağlayan yüzey",
+  ],
+  dekoratif: [
+    "Renkli dekoratif cam panel, asit boyalı yüzey",
+    "Kumlama desenli dekoratif cam, özel tasarım",
+    "Lazer kesim desenli dekoratif cam, modern görünüm",
+    "Buzlu dekoratif cam, ışık geçirgen yüzey",
+  ],
+};
 </script>
+
 <template>
   <section class="my-5 py-5" style="scroll-margin-top: 100px;">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 ms-auto me-auto p-lg-4 mt-lg-0 mt-4">
-          <RotatingCard>
-            <RotatingCardFront
-              :image="MasaCam"
-              size="contain"
-              title="Masa Camı"
-              description="Dayanıklılığı ve şıklığı bir arada sunan masa camları, her türlü mekâna modern bir dokunuş ekler ve kullanım alanınızı aydınlatır."
-            />
-
-            <RotatingCardBack
-              :image="VitrinCam"
-              size="contain"
-              title="Vitrin Camı"
-              description="Ürünlerinizi sergilemek için ideal olan vitrin camları, maksimum görünürlük sağlar ve mekânınıza estetik bir hava katar."
-            />
-          </RotatingCard>
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <h2 class="font-weight-bolder">Cam Çeşitleri</h2>
+          <p class="text-muted">
+            Masa camından dekoratif cama kadar her ihtiyaca özel cam çözümleri.
+          </p>
         </div>
-        <div class="col-lg-6 ms-auto">
-          <div class="row justify-content-start">
-            <DefaultInfoCard
-              title="Masa Camı"
-              description="Dayanıklılığı ve şıklığı bir arada sunan masa camları, her türlü mekâna modern bir dokunuş ekler ve kullanım alanınızı aydınlatır."
-            />
-            <DefaultInfoCard
-              title="Vitrin Camı"
-              description="Ürünlerinizi sergilemek için ideal olan vitrin camları, maksimum görünürlük sağlar ve mekânınıza estetik bir hava katar."
-            />
-          </div>
-          <div class="row justify-content-start mt-5">
-            <DefaultInfoCard
-              class="mt-3"
-              title="Kapı Camı"
-              description="Hem iç hem de dış mekân kapılarında kullanılan kapı camları, doğal ışığı içeri alırken, mekânınıza şeffaflık ve ferahlık katıyor."
-            />
-            <DefaultInfoCard
-              class="mt-3"
-              title="Dekoratif Cam"
-              description="Sanatsal desenler ve renklerle zenginleştirilmiş dekoratif camlar, mekânlarınıza kişisellik ve benzersiz bir atmosfer sağlar."
-            />
-          </div>
+      </div>
+
+      <div class="row">
+        <div
+          v-for="catKey of Object.keys(cats)"
+          :key="catKey"
+          class="col-lg-6 mb-4"
+        >
+          <ImageCarousel
+            :id="'cam-' + catKey"
+            :title="titles[catKey] || catKey"
+            :images="cats[catKey].map((img, i) => ({
+              src: img.src,
+              title: (titles[catKey] || catKey) + ' ' + (i + 1),
+              description: (descriptions[catKey] || [])[i] || ''
+            }))"
+          />
         </div>
       </div>
     </div>

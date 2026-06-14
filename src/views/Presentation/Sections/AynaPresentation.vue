@@ -1,56 +1,69 @@
 <script setup>
-import RotatingCard from "../../../components/cards/rotatingCards/RotatingCard.vue";
-import RotatingCardFront from "../../../components/cards/rotatingCards/RotatingCardFront.vue";
-import RotatingCardBack from "../../../components/cards/rotatingCards/RotatingCardBack.vue";
-import DefaultInfoCard from "../../../components/cards/infoCards/DefaultInfoCard.vue";
+import ImageCarousel from "../../../components/cards/ImageCarousel.vue";
+import { getCategoryImages } from "../../../utils/imageLoader.js";
 
-import DekoratifAyna from "@/assets/images/dekoratifayna.jpg";
-import ZeminAyna from "@/assets/images/zeminayna.jpg";
+const cats = getCategoryImages("ayna");
+
+const titles = {
+  dekoratif: "Dekoratif Ayna",
+  zemin: "Zemin Aynası",
+  banyo: "Banyo Aynası",
+  masaustu: "Masa Üstü Aynası",
+};
+
+const descriptions = {
+  dekoratif: [
+    "Altın varak çerçeveli dekoratif duvar aynası, vintage tasarım",
+    "Led aydınlatmalı dekoratif ayna, modern banyolar için",
+    "Oval çerçeveli dekoratif ayna, klasik ve zarif görünüm",
+    "Büyük boy duvar aynası, ince metal çerçeveli",
+  ],
+  zemin: [
+    "Ayaklı boy aynası, oval tasarım, metal ayaklı",
+    "Devasa zemin aynası, ahşap çerçeveli, şık duruş",
+    "Metal çerçeveli zemin aynası, modern iç mekanlar için",
+    "Oval zemin aynası, ince profil, hafif ve taşınabilir",
+  ],
+  banyo: [
+    "Led aydınlatmalı banyo aynası, buğu önleyici yüzey",
+    "Krom çerçeveli banyo aynası, fonksiyonel ve şık",
+    "Dolaplı banyo aynası, gizli depolama alanlı",
+    "Geniş banyo aynası, armatürsüz sade tasarım",
+  ],
+  masaustu: [
+    "Işıklı makyaj aynası, ayarlanabilir açı, büyüteçli",
+    "Çift taraflı masa üstü aynası, normal ve büyütmeli",
+  ],
+};
 </script>
+
 <template>
   <section class="my-5 py-5" style="scroll-margin-top: 100px;">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 ms-auto me-auto p-lg-4 mt-lg-0 mt-4">
-          <RotatingCard>
-            <RotatingCardFront
-              :image="DekoratifAyna"
-              size="contain"
-              title="Dekoratif Ayna"
-              description="Sanatsal dokunuşlarla mekanınıza estetik bir hava katın. Dekoratif aynalar, odanızın stilini yükselterek benzersiz bir atmosfer oluşturur."
-            />
-
-            <RotatingCardBack
-              :image="ZeminAyna"
-              size="contain"
-              title="Zemin Aynası"
-              description="Zemin aynaları, geniş yansıma alanı sunarak odanızı daha geniş ve davetkar hale getirir. Ayakta durabilen tasarımları ile kolay yerleştirme imkanı sunar."
-            />
-          </RotatingCard>
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <h2 class="font-weight-bolder">Ayna Çeşitleri</h2>
+          <p class="text-muted">
+            Dekoratif aynalardan banyo aynalarına, her stile uygun geniş ayna koleksiyonu.
+          </p>
         </div>
-        <div class="col-lg-6 ms-auto">
-          <div class="row justify-content-start">
-            <DefaultInfoCard
-              title="Dekoratif Ayna"
-              description="Sanatsal dokunuşlarla mekanınıza estetik bir hava katın. Dekoratif aynalar, odanızın stilini yükselterek benzersiz bir atmosfer oluşturur."
-            />
-            <DefaultInfoCard
-              title="Zemin Aynası"
-              description="Zemin aynaları, geniş yansıma alanı sunarak odanızı daha geniş ve davetkar hale getirir. Ayakta durabilen tasarımları ile kolay yerleştirme imkanı sunar."
-            />
-          </div>
-          <div class="row justify-content-start mt-5">
-            <DefaultInfoCard
-              class="mt-3"
-              title="Banyo Aynası"
-              description="Fonksiyonellik ve stilin birleşimi. Banyo aynaları, sabah rutinleriniz için idealdir ve banyonuza modern bir dokunuş katar."
-            />
-            <DefaultInfoCard
-              class="mt-3"
-              title="Masa Üstü Aynası"
-              description="Kişisel bakımınız için mükemmel yardımcı. Masa üstü aynalar, detaylı makyaj ve bakım işlemleri için idealdir, her masaya şıklık katar."
-            />
-          </div>
+      </div>
+
+      <div class="row">
+        <div
+          v-for="catKey of Object.keys(cats)"
+          :key="catKey"
+          class="col-lg-6 mb-4"
+        >
+          <ImageCarousel
+            :id="'ayna-' + catKey"
+            :title="titles[catKey] || catKey"
+            :images="cats[catKey].map((img, i) => ({
+              src: img.src,
+              title: (titles[catKey] || catKey) + ' ' + (i + 1),
+              description: (descriptions[catKey] || [])[i] || ''
+            }))"
+          />
         </div>
       </div>
     </div>

@@ -184,6 +184,12 @@ watch(
                         <span>Cam Modelleri</span>
                     </a>
                     <a
+                        href="/#balkon"
+                        class="dropdown-item border-radius-md"
+                      >
+                        <span>Balkon Camı Sistemleri</span>
+                    </a>
+                    <a
                         href="/#ayna"
                         class="dropdown-item border-radius-md"
                       >
@@ -193,7 +199,13 @@ watch(
                         href="/#dograma-cesitleri"
                         class="dropdown-item border-radius-md"
                       >
-                        <span>Doğrama ve Havalandırma Ürünleri</span>
+                        <span>Doğrama Çeşitleri</span>
+                    </a>
+                    <a
+                        href="/#sineklik-havalandirma"
+                        class="dropdown-item border-radius-md"
+                      >
+                        <span>Sineklik &amp; Havalandırma</span>
                     </a>
                     </div>
                   </div>
@@ -213,6 +225,12 @@ watch(
                         <span>Cam Modelleri</span>
                     </a>
                     <a
+                        href="/#balkon"
+                        class="dropdown-item border-radius-md"
+                      >
+                        <span>Balkon Camı Sistemleri</span>
+                    </a>
+                    <a
                         href="/#ayna"
                         class="dropdown-item border-radius-md"
                       >
@@ -222,7 +240,13 @@ watch(
                         href="/#dograma-cesitleri"
                         class="dropdown-item border-radius-md"
                       >
-                        <span>Doğrama ve Havalandırma Ürünleri</span>
+                        <span>Doğrama Çeşitleri</span>
+                    </a>
+                    <a
+                        href="/#sineklik-havalandirma"
+                        class="dropdown-item border-radius-md"
+                      >
+                        <span>Sineklik &amp; Havalandırma</span>
                     </a>
               </div>
             </div>
