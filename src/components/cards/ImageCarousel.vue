@@ -8,6 +8,8 @@ const props = defineProps({
 });
 
 const activeIndex = ref(0);
+const previewVisible = ref(false);
+const previewSrc = ref("");
 
 function prev() {
   activeIndex.value =
@@ -25,6 +27,18 @@ function next() {
 
 function goTo(index) {
   activeIndex.value = index;
+}
+
+function openPreview(src) {
+  previewSrc.value = src;
+  previewVisible.value = true;
+  document.body.style.overflow = "hidden";
+}
+
+function closePreview() {
+  previewVisible.value = false;
+  previewSrc.value = "";
+  document.body.style.overflow = "";
 }
 </script>
 
@@ -60,13 +74,17 @@ function goTo(index) {
           :key="'slide-' + idx"
           :class="['mk-carousel-item', { active: idx === activeIndex }]"
         >
-          <div class="mk-carousel-image-wrapper">
+          <div class="mk-carousel-image-wrapper" @click="openPreview(img.src)">
             <img
               :src="img.src"
               :alt="img.title || title"
               class="d-block w-100 mk-carousel-img"
               loading="lazy"
             />
+            <div class="mk-carousel-zoom-hint">
+              <i class="material-icons">zoom_in</i>
+              <span>Büyüt</span>
+            </div>
           </div>
           <div
             v-if="img.title || img.description"
@@ -80,7 +98,7 @@ function goTo(index) {
         </div>
       </div>
 
-      <!-- Controls (hide when empty) -->
+      <!-- Controls -->
       <button v-if="images.length > 0" class="mk-carousel-control-prev" @click="prev" type="button" aria-label="Önceki">
         <span class="mk-carousel-control-icon mk-carousel-control-prev-icon" aria-hidden="true"></span>
       </button>
@@ -96,6 +114,18 @@ function goTo(index) {
     >
       {{ images[activeIndex].description }}
     </p>
+
+    <!-- Lightbox Preview -->
+    <Teleport to="body">
+      <div v-if="previewVisible" class="mk-lightbox-overlay" @click.self="closePreview">
+        <button class="mk-lightbox-close" @click="closePreview" aria-label="Kapat">
+          <i class="material-icons">close</i>
+        </button>
+        <div class="mk-lightbox-content">
+          <img :src="previewSrc" class="mk-lightbox-image" alt="Önizleme" />
+        </div>
+      </div>
+    </Teleport>
   </div>
 </template>
 
@@ -159,12 +189,44 @@ function goTo(index) {
 .mk-carousel-image-wrapper {
   height: 400px;
   overflow: hidden;
+  cursor: pointer;
+  position: relative;
 }
 .mk-carousel-img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.3s ease;
+}
+.mk-carousel-image-wrapper:hover .mk-carousel-img {
+  transform: scale(1.03);
+}
+
+/* Zoom hint overlay */
+.mk-carousel-zoom-hint {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  border-radius: 8px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  font-size: 0.85rem;
+  cursor: pointer;
+  z-index: 3;
+  pointer-events: none;
+}
+.mk-carousel-zoom-hint i {
+  font-size: 1.2rem;
+}
+.mk-carousel-image-wrapper:hover .mk-carousel-zoom-hint {
+  opacity: 1;
 }
 
 /* Indicators */
@@ -261,6 +323,13 @@ function goTo(index) {
   .mk-carousel-image-wrapper {
     height: 260px;
   }
+  .mk-carousel-zoom-hint {
+    opacity: 1;
+    top: 8px;
+    right: 8px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+  }
   .mk-carousel-caption {
     position: relative;
     right: 0;
@@ -273,5 +342,66 @@ function goTo(index) {
   .mk-carousel-indicators {
     display: none;
   }
+}
+</style>
+
+<!-- Non-scoped styles for lightbox overlay -->
+<style>
+.mk-lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: mkFadeIn 0.2s ease;
+}
+
+.mk-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background 0.2s;
+  z-index: 10;
+}
+.mk-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.mk-lightbox-content {
+  max-width: 95vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mk-lightbox-image {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes mkFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 </style>
