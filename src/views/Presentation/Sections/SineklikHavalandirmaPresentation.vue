@@ -1,7 +1,12 @@
 <script setup>
 import ImageCarousel from "../../../components/cards/ImageCarousel.vue";
 
+import sineklik1 from "@/assets/images/carousel/sineklik-1.webp";
 import havalandirma1 from "@/assets/images/carousel/dograma-menfez-1.webp";
+
+const sineklikImages = [
+  { src: sineklik1, title: "Sineklik", description: "PVC sineklik, pencere ve kapılar için böcek korumalı, kolay montajlı sistem" },
+];
 
 const havalandirmaImages = [
   { src: havalandirma1, title: "Havalandırma Menfezi", description: "Doğalgaz tesisatı için TS EN 14800 uyumlu duvar tipi havalandırma menfezi, doğal gaz akışı ve güvenli tahliye sağlar" },
@@ -21,12 +26,12 @@ const havalandirmaImages = [
       </div>
 
       <div class="row">
-        <!-- Sineklik (no photos yet, shows placeholder) -->
+        <!-- Sineklik (1 photo) -->
         <div class="col-lg-6 mb-4">
           <ImageCarousel
             id="sineklik"
             title="Sineklik"
-            :images="[]"
+            :images="sineklikImages"
           />
         </div>
 
