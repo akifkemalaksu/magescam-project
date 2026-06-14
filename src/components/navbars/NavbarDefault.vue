@@ -205,7 +205,7 @@ watch(
                         href="/#sineklik-havalandirma"
                         class="dropdown-item border-radius-md"
                       >
-                        <span>Sineklik &amp; Havalandırma</span>
+                        <span>Sineklik &amp; Havalandırma Menfezleri</span>
                     </a>
                     </div>
                   </div>
@@ -246,7 +246,7 @@ watch(
                         href="/#sineklik-havalandirma"
                         class="dropdown-item border-radius-md"
                       >
-                        <span>Sineklik &amp; Havalandırma</span>
+                        <span>Sineklik &amp; Havalandırma Menfezleri</span>
                     </a>
               </div>
             </div>

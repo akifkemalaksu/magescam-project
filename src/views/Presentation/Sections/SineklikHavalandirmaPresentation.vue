@@ -4,7 +4,7 @@ import ImageCarousel from "../../../components/cards/ImageCarousel.vue";
 import havalandirma1 from "@/assets/images/carousel/dograma-menfez-1.webp";
 
 const havalandirmaImages = [
-  { src: havalandirma1, title: "Menfez", description: "Duvara monte PVC menfez, ayarlanabilir hava akışı" },
+  { src: havalandirma1, title: "Havalandırma Menfezi", description: "Doğalgaz tesisatı için TS EN 14800 uyumlu duvar tipi havalandırma menfezi, doğal gaz akışı ve güvenli tahliye sağlar" },
 ];
 </script>
 
@@ -13,9 +13,9 @@ const havalandirmaImages = [
     <div class="container">
       <div class="row mb-4">
         <div class="col-12 text-center">
-          <h2 class="font-weight-bolder">Sineklik & Havalandırma</h2>
+          <h2 class="font-weight-bolder">Sineklik & Havalandırma Menfezleri</h2>
           <p class="text-muted">
-            Sineklik ve menfez çözümlerimizle evinizde temiz hava ve böceksiz ortam.
+            Evinizde güvenli doğalgaz kullanımı ve sağlıklı banyo/tuvalet havalandırması için menfez çözümleri.
           </p>
         </div>
       </div>
@@ -30,11 +30,11 @@ const havalandirmaImages = [
           />
         </div>
 
-        <!-- Havalandırma (has 1 photo) -->
+        <!-- Havalandırma Menfezleri (has 1 photo) -->
         <div class="col-lg-6 mb-4">
           <ImageCarousel
             id="havalandirma"
-            title="Menfez / Havalandırma"
+            title="Havalandırma Menfezleri"
             :images="havalandirmaImages"
           />
         </div>
