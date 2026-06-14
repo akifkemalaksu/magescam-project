@@ -271,7 +271,7 @@ function goTo(index) {
     display: block !important;
   }
   .mk-carousel-indicators {
-    bottom: 0.75rem;
+    display: none;
   }
 }
 </style>
