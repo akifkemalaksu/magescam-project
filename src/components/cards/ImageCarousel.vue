@@ -308,6 +308,9 @@ function closePreview() {
 }
 
 /* Caption */
+.mk-carousel-caption h6 {
+  display: none;
+}
 .mk-carousel-caption {
   position: absolute;
   right: 15%;
