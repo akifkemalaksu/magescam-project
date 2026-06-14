@@ -24,14 +24,24 @@ const descriptions = {
     <div class="container">
       <div class="row mb-4">
         <div class="col-12 text-center">
-          <h2 class="font-weight-bolder">Sürgülü Balkon Camı</h2>
+          <h2 class="font-weight-bolder">Balkon Camı Sistemleri</h2>
           <p class="text-muted">
-            Balkonunuzu sürgülü cam sistemlerimizle 4 mevsim kullanıma açın.
+            Balkonunuzu cam sistemlerimizle 4 mevsim kullanıma açın.
           </p>
         </div>
       </div>
 
       <div class="row">
+        <!-- Katlanır Balkon (no photos yet, shows placeholder) -->
+        <div class="col-lg-6 mb-4">
+          <ImageCarousel
+            id="balkon-katlanir"
+            title="Katlanır Balkon Camı"
+            :images="[]"
+          />
+        </div>
+
+        <!-- Sürgülü Balkon (has photos) -->
         <div
           v-for="catKey of Object.keys(cats)"
           :key="catKey"

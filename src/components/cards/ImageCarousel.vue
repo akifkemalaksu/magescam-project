@@ -33,8 +33,17 @@ function goTo(index) {
     <h5 v-if="title" class="text-center font-weight-bolder mb-3">{{ title }}</h5>
 
     <div class="mk-carousel mk-carousel-fade rounded-4 shadow" :id="id">
+      <!-- Empty state -->
+      <div v-if="images.length === 0" class="mk-carousel-empty">
+        <div class="mk-carousel-empty-content">
+          <i class="material-icons text-white" style="font-size: 3rem;">photo_camera</i>
+          <p class="text-white h6 mt-3">Fotoğraflar yakında eklenecek</p>
+          <p class="text-white-50 small">Bu ürün kategorisi için görseller hazırlanıyor.</p>
+        </div>
+      </div>
+
       <!-- Indicators -->
-      <div class="mk-carousel-indicators">
+      <div v-if="images.length > 0" class="mk-carousel-indicators">
         <button
           v-for="(img, idx) in images"
           :key="'ind-' + idx"
@@ -45,7 +54,7 @@ function goTo(index) {
       </div>
 
       <!-- Slides -->
-      <div class="mk-carousel-inner rounded-4">
+      <div v-if="images.length > 0" class="mk-carousel-inner rounded-4">
         <div
           v-for="(img, idx) in images"
           :key="'slide-' + idx"
@@ -71,11 +80,11 @@ function goTo(index) {
         </div>
       </div>
 
-      <!-- Controls -->
-      <button class="mk-carousel-control-prev" @click="prev" type="button" aria-label="Önceki">
+      <!-- Controls (hide when empty) -->
+      <button v-if="images.length > 0" class="mk-carousel-control-prev" @click="prev" type="button" aria-label="Önceki">
         <span class="mk-carousel-control-icon mk-carousel-control-prev-icon" aria-hidden="true"></span>
       </button>
-      <button class="mk-carousel-control-next" @click="next" type="button" aria-label="Sonraki">
+      <button v-if="images.length > 0" class="mk-carousel-control-next" @click="next" type="button" aria-label="Sonraki">
         <span class="mk-carousel-control-icon mk-carousel-control-next-icon" aria-hidden="true"></span>
       </button>
     </div>
@@ -95,6 +104,23 @@ function goTo(index) {
   position: relative;
   overflow: hidden;
   background: #e9ecef;
+  min-height: 200px;
+}
+
+.mk-carousel-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  background: linear-gradient(135deg, #2d3748, #4a5568);
+  border-radius: 0.5rem;
+}
+.mk-carousel-empty-content {
+  text-align: center;
+  padding: 2rem;
+}
+.mk-carousel-empty-content .text-white-50 {
+  color: rgba(255, 255, 255, 0.6) !important;
 }
 
 .mk-carousel-inner {

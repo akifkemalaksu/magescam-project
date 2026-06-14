@@ -13,14 +13,24 @@ const havalandirmaImages = [
     <div class="container">
       <div class="row mb-4">
         <div class="col-12 text-center">
-          <h2 class="font-weight-bolder">Havalandırma</h2>
+          <h2 class="font-weight-bolder">Sineklik & Havalandırma</h2>
           <p class="text-muted">
-            Menfez çözümlerimizle evinizde temiz hava sirkülasyonu.
+            Sineklik ve menfez çözümlerimizle evinizde temiz hava ve böceksiz ortam.
           </p>
         </div>
       </div>
 
       <div class="row">
+        <!-- Sineklik (no photos yet, shows placeholder) -->
+        <div class="col-lg-6 mb-4">
+          <ImageCarousel
+            id="sineklik"
+            title="Sineklik"
+            :images="[]"
+          />
+        </div>
+
+        <!-- Havalandırma (has 1 photo) -->
         <div class="col-lg-6 mb-4">
           <ImageCarousel
             id="havalandirma"
