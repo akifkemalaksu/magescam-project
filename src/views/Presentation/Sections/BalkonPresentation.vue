@@ -5,10 +5,21 @@ import { getCategoryImages } from "../../../utils/imageLoader.js";
 const cats = getCategoryImages("balkon");
 
 const titles = {
+  katlanir: "Katlanır Balkon Camı",
   surgulu: "Sürgülü Balkon Camı",
 };
 
 const descriptions = {
+  katlanir: [
+    "4 kanatlı katlanır cam balkon sistemi, alüminyum profil",
+    "Akordiyon tip katlanır balkon camı, polycarbon aksamlı",
+    "Isıcamlı katlanır balkon sistemi, 6 mm temperli cam",
+    "2 kanatlı katlanır balkon camı, kilitli kulp sistemi",
+    "Geniş açıklıklı katlanır cam balkon, 6 panel",
+    "Katlanır balkon camı, sessiz ray sistemi, alüminyum profil",
+    "Isı yalıtımlı katlanır balkon camı, 8 mm temperli",
+    "Polycarbon katlanır balkon sistemi, UV dayanımlı",
+  ],
   surgulu: [
     "2 kanat sürme cam balkon, alüminyum raylı sistem",
     "3 kanat sürgülü balkon camı, sessiz ray mekanizması",
@@ -32,16 +43,6 @@ const descriptions = {
       </div>
 
       <div class="row">
-        <!-- Katlanır Balkon (no photos yet, shows placeholder) -->
-        <div class="col-lg-6 mb-4">
-          <ImageCarousel
-            id="balkon-katlanir"
-            title="Katlanır Balkon Camı"
-            :images="[]"
-          />
-        </div>
-
-        <!-- Sürgülü Balkon (has photos) -->
         <div
           v-for="catKey of Object.keys(cats)"
           :key="catKey"
