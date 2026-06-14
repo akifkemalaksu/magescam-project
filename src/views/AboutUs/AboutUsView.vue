@@ -64,9 +64,9 @@ onUnmounted(() => {
               />
             </div>
 
-            <div class="w-100 my-5"></div>
+            <div class="w-100 my-5 d-none d-md-block"></div>
 
-            <div class="col-sm-12 col-md-6 mt-5 text-center">
+            <div class="col-sm-12 col-md-6 mt-5 text-center order-4 order-md-1">
               <img
               class="border-radius-xl"
               :src="insideDukkan"
@@ -75,7 +75,7 @@ onUnmounted(() => {
               alt="Mages cam içeriden görünüm"
               />
             </div>
-            <div class="col-sm-12 col-md-6 mt-5">
+            <div class="col-sm-12 col-md-6 mt-5 order-3 order-md-2">
               <h4 class="text-white">Yenilikçi yaklaşımımız, masa camı, vitrin camı ve kapı camı gibi diğer alanlara da sıçramış durumdadır.</h4>
               <p class="text-white mt-4 lead">Sultanbeyli merkezimizden yola çıkarak, her bir proje için özel olarak tasarlanmış çözümlerle, camın estetiğini ve fonksiyonelliğini birleştiriyoruz. Bu ürünlerimizle, mekanlarınıza değer katmayı ve farklı ihtiyaçlara yanıt vermeyi amaçlıyoruz.</p>
               <hr class="my-4 text-white opacity-2">
