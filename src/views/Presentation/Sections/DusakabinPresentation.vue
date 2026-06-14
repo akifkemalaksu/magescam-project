@@ -62,7 +62,7 @@ const descriptions = {
             :title="titles[catKey] || catKey"
             :images="cats[catKey].map((img, i) => ({
               src: img.src,
-              title: (titles[catKey] || catKey) + ' ' + (i + 1),
+              title: titles[catKey] || catKey,
               description: (descriptions[catKey] || [])[i] || ''
             }))"
           />

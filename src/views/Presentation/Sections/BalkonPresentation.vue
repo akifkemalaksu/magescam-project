@@ -5,17 +5,10 @@ import { getCategoryImages } from "../../../utils/imageLoader.js";
 const cats = getCategoryImages("balkon");
 
 const titles = {
-  katlanir: "Katlanır Balkon Camı",
   surgulu: "Sürgülü Balkon Camı",
 };
 
 const descriptions = {
-  katlanir: [
-    "4 kanatlı katlanır cam balkon sistemi, alüminyum profil",
-    "Akordiyon tip katlanır balkon camı, polycarbon aksamlı",
-    "Isıcamlı katlanır balkon sistemi, 6 mm temperli cam",
-    "2 kanatlı katlanır balkon camı, kilitli kulp sistemi",
-  ],
   surgulu: [
     "2 kanat sürme cam balkon, alüminyum raylı sistem",
     "3 kanat sürgülü balkon camı, sessiz ray mekanizması",
@@ -31,9 +24,9 @@ const descriptions = {
     <div class="container">
       <div class="row mb-4">
         <div class="col-12 text-center">
-          <h2 class="font-weight-bolder">Balkon Camı Sistemleri</h2>
+          <h2 class="font-weight-bolder">Sürgülü Balkon Camı</h2>
           <p class="text-muted">
-            Balkonunuzu katlanır veya sürgülü cam sistemlerimizle 4 mevsim kullanıma açın.
+            Balkonunuzu sürgülü cam sistemlerimizle 4 mevsim kullanıma açın.
           </p>
         </div>
       </div>
@@ -49,7 +42,7 @@ const descriptions = {
             :title="titles[catKey] || catKey"
             :images="cats[catKey].map((img, i) => ({
               src: img.src,
-              title: (titles[catKey] || catKey) + ' ' + (i + 1),
+              title: titles[catKey] || catKey,
               description: (descriptions[catKey] || [])[i] || ''
             }))"
           />
