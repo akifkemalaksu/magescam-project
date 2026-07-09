@@ -24,7 +24,7 @@ export default defineConfig({
   // vite-ssg (statik prerender) ayarları
   ssgOptions: {
     script: "async",
-    dirStyle: "nested", // /hakkimizda/index.html -> nginx try_files ile uyumlu
+    dirStyle: "flat", // /hakkimizda.html -> nginx "try_files ... $uri.html" ile redirect'siz
     formatting: "minify",
     includedRoutes(paths) {
       // Bileşeni olmayan (yalnızca JS yönlendirme) ve dinamik yolları hariç tut.
