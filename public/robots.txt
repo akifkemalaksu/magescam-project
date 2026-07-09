@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.magescam.com/sitemap.xml
+Sitemap: https://magescam.com/sitemap.xml
