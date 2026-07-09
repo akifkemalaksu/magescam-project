@@ -1,25 +1,35 @@
-import { createApp } from "vue";
+import { ViteSSG } from "vite-ssg";
 import { createPinia } from "pinia";
-import VueGoogleMaps from '@fawmi/vue-google-maps'
-import {} from 'bootstrap';
 import App from "./App.vue";
-import router from "./router";
+import { routes } from "./router";
 
-// Nucleo Icons
+// Stiller (SSR/prerender güvenli — yalnızca CSS)
 import "./assets/css/nucleo-icons.css";
 import "./assets/css/nucleo-svg.css";
+import "./assets/scss/material-kit.scss";
 
-import materialKit from "./material-kit.js";
+// https://github.com/antfu/vite-ssg
+export const createApp = ViteSSG(
+  App,
+  { routes },
+  async ({ app }) => {
+    app.use(createPinia());
 
-const app = createApp(App);
+    // Tarayıcıya (window/document) bağımlı olan her şey yalnızca client'ta yüklenir.
+    // `import.meta.env.SSR` derleme zamanı sabiti olduğundan bu blok
+    // sunucu (prerender) bundle'ından tamamen çıkarılır.
+    if (!import.meta.env.SSR) {
+      await import("bootstrap");
+      await import("./assets/js/material-input.js");
+      await import("./assets/js/material-kit-pro.js");
+      await import("./assets/js/ripple-effect.js");
 
-app.use(createPinia());
-app.use(router);
-app.use(materialKit);
-app.use(VueGoogleMaps, {
-    load: {
-        key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY
+      const { default: VueGoogleMaps } = await import("@fawmi/vue-google-maps");
+      app.use(VueGoogleMaps, {
+        load: {
+          key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+        },
+      });
     }
-})
-
-app.mount("#app");
+  }
+);

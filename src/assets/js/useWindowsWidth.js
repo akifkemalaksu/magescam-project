@@ -1,7 +1,9 @@
 import { computed, onMounted, onUnmounted, ref } from "vue";
 
 export function useWindowsWidth() {
-  let windowWidth = ref(window.innerWidth);
+  // SSR/prerender'da window yoktur; masaüstü genişliğini varsay.
+  const hasWindow = typeof window !== "undefined";
+  let windowWidth = ref(hasWindow ? window.innerWidth : 1200);
 
   const onWidthChange = () => (windowWidth.value = window.innerWidth);
   onMounted(() => window.addEventListener("resize", onWidthChange));

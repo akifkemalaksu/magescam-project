@@ -1,5 +1,6 @@
 <script setup>
 import CountTo from "vue-count-to/src";
+import ClientOnly from "@/components/ClientOnly.vue";
 
 defineProps({
   count: {
@@ -46,9 +47,10 @@ defineProps({
 <template>
   <div class="text-center">
     <h2 :class="`text-gradient h1 text-${color ?? 'success'}`">
-      <CountTo :start-val="0" :end-val="count" :duration="duration" />{{
-        suffix
-      }}
+      <ClientOnly>
+        <CountTo :start-val="0" :end-val="count" :duration="duration" />
+        <template #placeholder>{{ count }}</template>
+      </ClientOnly>{{ suffix }}
     </h2>
     <h5 class="mt-3">{{ title }}</h5>
     <p class="text-sm font-weight-normal">

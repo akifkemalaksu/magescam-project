@@ -23,13 +23,23 @@ import logo  from "@/assets/images/logos/just-logo-original.png"
 import glassBackground from "@/assets/images/glass-background.jpg";
 import { RouterLink } from "vue-router";
 
+// SEO
+import { usePageSeo } from "@/composables/useSeo";
+usePageSeo({
+  title: "Mages Cam — Duşakabin, Cam & Ayna | Sultanbeyli",
+  description:
+    "Sultanbeyli'de duşakabin, cam, ayna, doğrama ve havalandırma çözümleri. 1986'dan bu yana köşe/yarım daire/walk-in duşakabin, masa camı, vitrin camı ve dekoratif ayna.",
+  path: "/",
+});
+
 //hooks
-const body = document.getElementsByTagName("body")[0];
 onMounted(() => {
+  const body = document.getElementsByTagName("body")[0];
   body.classList.add("presentation-page");
   body.classList.add("bg-gray-200");
 });
 onUnmounted(() => {
+  const body = document.getElementsByTagName("body")[0];
   body.classList.remove("presentation-page");
   body.classList.remove("bg-gray-200");
 });

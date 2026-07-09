@@ -14,13 +14,23 @@ import background from "@/assets/images/aboutus-background.jpg";
 import insideDukkan from "@/assets/images/inside-dukkan.jpg";
 import outsideDukkan from "@/assets/images/outside-dukkan.jpg";
 
+// SEO
+import { usePageSeo } from "@/composables/useSeo";
+usePageSeo({
+  title: "Hakkımızda | Mages Cam — Sultanbeyli",
+  description:
+    "1986'dan bu yana cam ve ayna sektöründeki tecrübemizle Sultanbeyli'de duşakabin, masa camı, vitrin camı ve dekoratif ayna çözümleri sunuyoruz.",
+  path: "/hakkimizda",
+});
+
 //hooks
-const body = document.getElementsByTagName("body")[0];
 onMounted(() => {
+  const body = document.getElementsByTagName("body")[0];
   body.classList.add("presentation-page");
   body.classList.add("bg-gray-200");
 });
 onUnmounted(() => {
+  const body = document.getElementsByTagName("body")[0];
   body.classList.remove("presentation-page");
   body.classList.remove("bg-gray-200");
 });

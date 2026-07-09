@@ -2,10 +2,20 @@
 import { computed } from "vue";
 
 import Gmap from "@/components/Map.vue";
+import ClientOnly from "@/components/ClientOnly.vue";
 
 //example components
 import NavbarDefault from "../../components/navbars/NavbarDefault.vue";
 import DefaultFooter from "../../components/footers/FooterDefault.vue";
+
+// SEO
+import { usePageSeo } from "@/composables/useSeo";
+usePageSeo({
+  title: "İletişim | Mages Cam — Sultanbeyli Cam & Ayna",
+  description:
+    "Sultanbeyli Mehmet Akif Mahallesi'ndeki Mages Cam'a telefon, WhatsApp veya e-posta ile ulaşın. Adres ve harita bilgileri sayfamızda.",
+  path: "/iletisim",
+});
 
 //Vue Material Kit 2 components
 import MaterialSocialButton from "@/components/MaterialSocialButton.vue";
@@ -54,7 +64,9 @@ let mailLink = computed(() => `mailto:${mail}`)
               <h5 class="mt-4 text-white"> <i class="fas fa-map-marker-alt me-3"></i> {{ address }} </h5>
             </div>
             <div class="col-sm-12 col-md-6 mt-5">
-              <Gmap height="35rem" width="100%"></Gmap>
+              <ClientOnly>
+                <Gmap height="35rem" width="100%"></Gmap>
+              </ClientOnly>
             </div>
           </div>
         </div>

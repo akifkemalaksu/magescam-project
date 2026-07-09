@@ -3,6 +3,15 @@ import { RouterLink } from "vue-router";
 
 import NavbarDefault from "../../components/navbars/NavbarDefault.vue";
 import DefaultFooter from "../../components/footers/FooterDefault.vue";
+
+// SEO — hata sayfası indekslenmemeli
+import { usePageSeo } from "@/composables/useSeo";
+usePageSeo({
+  title: "Sayfa Bulunamadı (404) | Mages Cam",
+  description: "Aradığınız sayfa bulunamadı.",
+  path: "/404",
+  noindex: true,
+});
 </script>
 
 
