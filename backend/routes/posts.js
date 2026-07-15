@@ -53,9 +53,18 @@ router.post("/posts", (req, res) => {
   }
 
   try {
+    // Önce bu slug var mı kontrol et
+    const existing = db
+      .prepare("SELECT id FROM posts WHERE slug = ?")
+      .get(slug);
+
+    if (existing) {
+      return res.status(409).json({ error: "Bu slug zaten var", slug });
+    }
+
     const result = db
       .prepare(
-        `INSERT OR REPLACE INTO posts (slug, title, description, content, tags, published, published_at)
+        `INSERT INTO posts (slug, title, description, content, tags, published, published_at)
          VALUES (?, ?, ?, ?, ?, ?, ?)`
       )
       .run(
