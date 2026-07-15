@@ -61,4 +61,4 @@ jobs:
         run: |
           ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }} \
             ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
-            "cd /var/www/magescam && docker compose up -d --build"
+            "cd /var/www/magescam && docker compose down --rmi local && docker compose up -d --build"
