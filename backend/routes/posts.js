@@ -9,7 +9,7 @@ router.get("/posts", (req, res) => {
       `SELECT id, slug, title, description, tags, published_at
        FROM posts
        WHERE published = 1
-       ORDER BY published_at DESC`
+       ORDER BY published_at DESC, id DESC`
     )
     .all();
   res.json(posts);
@@ -22,7 +22,7 @@ router.get("/latest", (req, res) => {
       `SELECT slug, title, published_at
        FROM posts
        WHERE published = 1
-       ORDER BY published_at DESC
+       ORDER BY published_at DESC, id DESC
        LIMIT 10`
     )
     .all();
@@ -103,7 +103,7 @@ router.delete("/posts/:slug", (req, res) => {
 router.get("/sitemap", (req, res) => {
   const posts = db
     .prepare(
-      `SELECT slug, published_at FROM posts WHERE published = 1 ORDER BY published_at DESC`
+      `SELECT slug, published_at FROM posts WHERE published = 1 ORDER BY published_at DESC, id DESC`
     )
     .all();
   res.json(posts);
