@@ -62,7 +62,7 @@ function tagList(tags) {
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <h1 class="text-gradient text-primary mb-0">Blog &amp; Rehberler</h1>
+            <h1 class="text-gradient text-info mb-0">Blog &amp; Rehberler</h1>
             <p class="lead text-muted mt-3">
               Cam, duşakabin, balkon camı ve dekorasyon hakkında bilgilendirici
               yazılar.
