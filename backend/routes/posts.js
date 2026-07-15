@@ -15,6 +15,20 @@ router.get("/posts", (req, res) => {
   res.json(posts);
 });
 
+// GET /api/blog/latest — son 10 post (slug + title, duplicate kontrolü için)
+router.get("/latest", (req, res) => {
+  const posts = db
+    .prepare(
+      `SELECT slug, title, published_at
+       FROM posts
+       WHERE published = 1
+       ORDER BY published_at DESC
+       LIMIT 10`
+    )
+    .all();
+  res.json(posts);
+});
+
 // GET /api/blog/posts/:slug — tek post (içerik dahil)
 router.get("/posts/:slug", (req, res) => {
   const post = db
