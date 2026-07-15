@@ -9,3 +9,10 @@ services:
       - BLOG_DB_PATH=/app/data/blog.db
       - NODE_ENV=production
     restart: unless-stopped
+    networks:
+      - default
+      - n8n_default
+
+networks:
+  n8n_default:
+    external: true

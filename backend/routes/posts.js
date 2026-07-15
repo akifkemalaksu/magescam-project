@@ -29,6 +29,41 @@ router.get("/posts/:slug", (req, res) => {
   res.json(post);
 });
 
+// POST /api/blog/posts — n8n'den yeni post ekleme
+router.post("/posts", (req, res) => {
+  const { slug, title, description, content, tags, published, published_at } =
+    req.body;
+
+  if (!slug || !title || !content) {
+    return res.status(400).json({ error: "slug, title, content zorunlu" });
+  }
+
+  try {
+    const result = db
+      .prepare(
+        `INSERT OR REPLACE INTO posts (slug, title, description, content, tags, published, published_at)
+         VALUES (?, ?, ?, ?, ?, ?, ?)`
+      )
+      .run(
+        slug,
+        title,
+        description || "",
+        content,
+        tags || "",
+        published !== undefined ? published : 1,
+        published_at || new Date().toISOString().split("T")[0]
+      );
+
+    res.status(201).json({
+      id: result.lastInsertRowid,
+      slug,
+      message: "Post kaydedildi",
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // GET /api/blog/sitemap — dinamik sitemap için blog URL'leri
 router.get("/sitemap", (req, res) => {
   const posts = db
