@@ -16,6 +16,7 @@ const db = new Database(DB_PATH);
 // n8n ile eşzamanlı erişim için WAL modu
 db.pragma("journal_mode = WAL");
 db.pragma("foreign_keys = ON");
+db.pragma("encoding = 'UTF-8'");
 
 // Tabloyu oluştur (yoksa)
 db.exec(`

@@ -113,7 +113,7 @@ function formatDate(dateStr) {
             </nav>
 
             <!-- Title -->
-            <h1 class="text-gradient text-primary mb-2">{{ post.title }}</h1>
+            <h1 class="text-gradient text-info mb-2">{{ post.title }}</h1>
             <p class="text-muted mb-4">{{ formatDate(post.published_at) }}</p>
 
             <!-- Blog Content -->
