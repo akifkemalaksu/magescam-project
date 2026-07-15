@@ -87,6 +87,18 @@ router.post("/posts", (req, res) => {
   }
 });
 
+// DELETE /api/blog/posts/:slug — post sil
+router.delete("/posts/:slug", (req, res) => {
+  const existing = db
+    .prepare("SELECT id FROM posts WHERE slug = ?")
+    .get(req.params.slug);
+
+  if (!existing) return res.status(404).json({ error: "Post not found" });
+
+  db.prepare("DELETE FROM posts WHERE slug = ?").run(req.params.slug);
+  res.json({ message: "Post silindi", slug: req.params.slug });
+});
+
 // GET /api/blog/sitemap — dinamik sitemap için blog URL'leri
 router.get("/sitemap", (req, res) => {
   const posts = db
