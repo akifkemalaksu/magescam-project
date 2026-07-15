@@ -2,6 +2,8 @@ import PresentationView from "../views/Presentation/PresentationView.vue";
 import AboutUsView from "../views/AboutUs/AboutUsView.vue";
 import Contact from "@/views/Contact/Contact.vue";
 import NotFound from "@/views/errors/NotFound.vue";
+import BlogIndex from "@/views/Blog/BlogIndex.vue";
+import BlogPost from "@/views/Blog/BlogPost.vue";
 
 export const routes = [
   {
@@ -19,6 +21,16 @@ export const routes = [
     path: "/iletisim",
     name: "contact",
     component: Contact,
+  },
+  {
+    path: "/blog",
+    name: "blog",
+    component: BlogIndex,
+  },
+  {
+    path: "/blog/:slug",
+    name: "blog-post",
+    component: BlogPost,
   },
   {
     path: "/404",

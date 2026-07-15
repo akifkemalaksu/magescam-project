@@ -1,0 +1,11 @@
+services:
+  api:
+    build: ./backend
+    ports:
+      - "127.0.0.1:3001:3001"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - BLOG_DB_PATH=/app/data/blog.db
+      - NODE_ENV=production
+    restart: unless-stopped

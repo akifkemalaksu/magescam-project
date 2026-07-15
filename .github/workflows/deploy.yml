@@ -20,6 +20,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Fetch blog data from production API
+        run: |
+          mkdir -p src/data
+          curl -s -f https://magescam.com/api/blog/posts > src/data/blog-posts.json || echo '[]' > src/data/blog-posts.json
+        continue-on-error: true
+
       - name: Build
         run: npm run build
         env:
@@ -32,9 +38,27 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Deploy via rsync
+      - name: Deploy static site via rsync
         run: |
           rsync -avz --delete \
+            --exclude='data/' \
             -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }}" \
             dist/ \
             ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/magescam/
+
+      - name: Deploy backend + docker-compose
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }}" \
+            backend/ \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/magescam/backend/
+          rsync -avz \
+            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }}" \
+            docker-compose.yml \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/magescam/
+
+      - name: Restart API container
+        run: |
+          ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }} \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+            "cd /var/www/magescam && docker compose up -d --build"

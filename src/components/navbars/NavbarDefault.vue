@@ -252,7 +252,7 @@ watch(
             </div>
           </li>
         <li class="nav-item dropdown dropdown-hover mx-2">
-          <RouterLink 
+          <RouterLink
           role="button"
           class="nav-link ps-2 d-flex cursor-pointer align-items-center"
           :class="getTextColor()"
@@ -262,7 +262,17 @@ watch(
           Hakkımızda</RouterLink>
         </li>
         <li class="nav-item dropdown dropdown-hover mx-2">
-          <RouterLink 
+          <RouterLink
+          role="button"
+          class="nav-link ps-2 d-flex cursor-pointer align-items-center"
+          :class="getTextColor()"
+          :to="{ name: 'blog' }"
+          aria-expanded="false"
+          >
+          Blog</RouterLink>
+        </li>
+        <li class="nav-item dropdown dropdown-hover mx-2">
+          <RouterLink
           role="button"
           class="nav-link ps-2 d-flex cursor-pointer align-items-center"
           :class="getTextColor()"
